@@ -5,3 +5,4 @@ manage.py
 box_whiskers_demo/settings.py
 box_whiskers_demo/__pycache__/*
 boxplot/migrations/*
+db.sqlite3

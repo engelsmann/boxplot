@@ -18,6 +18,10 @@ Til udviklingen har jeg især hentet inspiration på følgende sider:
 - https://help.pythonanywhere.com/pages/IntegratingWithPythonAnywhere/
 - http://www.obeythetestinggoat.com/book/part1.harry.htmlr
 
+Ja, jeg er godt klar over, at dette repo blander dokumentation og kode.
+Det er ike optimalt, men det er for ikke at skulle holde flere bolde i luften
+i en læringssituation.
+
 ## Starte git repo lokalt
 Følger <https://tutorial.djangogirls.org/en/deploy/>:
 1. Installér 
