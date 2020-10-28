@@ -60,6 +60,10 @@ og Django-projektets egen
 ![MTV eller MVC?](https://miro.medium.com/max/500/1*pHlF3KufWwX7svv4Mv4Frg.jpeg "https://medium.com/shecodeafrica/understanding-the-mvc-pattern-in-django")
 
 ## Oprette projekt lokalt
+Udover alt fnidderet her har jeg
+[en tredelt pseudokode](box_whiskers_demo/pseudocode/step1.md),
+der måske vil afklare min fremgangsmåde.
+
 1. Start **projekt**: `$ django-admin startproject mortens-demo-app`, 
    som indrammer webapplikationen.
 1. Start projektets **første app** `$ python manage.py startapp box-whiskers`, 
