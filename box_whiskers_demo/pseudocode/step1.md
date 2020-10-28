@@ -91,8 +91,10 @@ As requested.
 > `$ git init`
 
 gives me, then, a fresh start, locally. 
-I also need to make a new GitHub repository: `git`'ll syncronize the files in the old GitHub
-with my local repo, which would result in a doubling of the files already on GitHub.
+I need to make a new GitHub repository: `git` will not syncronize 
+the files in the old GitHub repository with my new local repo,
+without resulting in a doubling of the files already on GitHub.
+I do not want that.
 
 
 Step 1: Data entered into system
@@ -104,8 +106,11 @@ Step 1: Data entered into system
 
 Test suite
 ---
-`django/box_whiskers_demo$ python manage.py runserver` gives me a neat Django landing page,
-as expected. From here, I have to locate i which script files to put the following tests:
+`django/box_whiskers_demo$ python manage.py runserver` gives me a neat 
+Django landing page, and from here, I continue tracking the 
+[Django tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/).
+
+But I also have to locate in which script files to put the following tests:
 1. Link to data file properly formed HTML: Anchor, `<a `...`href="`URL`"`...`>`txt`</a>`.
    - [Directive](https://docs.python.org/2.4/lib/doctest-options.html)
      to `doctest`: `+ELLIPSIS`, som tillader `...` i test.
