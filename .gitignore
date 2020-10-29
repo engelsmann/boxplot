@@ -1,10 +1,8 @@
-sketch1603900755770.png
-/__pycache__/*
-/box
+db.sqlite3
 manage.py
+sketch1603900755770.png
+__pycache__/*
 box_whiskers_demo/settings.py
 box_whiskers_demo/__pycache__/*
 boxplot/__pycache__/*
 boxplot/migrations/__pycache__/*
-boxplot/__pycache__/models.cpython-38.pyc
-db.sqlite3
