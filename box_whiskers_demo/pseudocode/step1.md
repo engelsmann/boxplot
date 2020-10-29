@@ -31,90 +31,25 @@ The `boxplot` demo app will exhibit three pages to the User:
 Possibly the main template may contain **demo**-style links to this GitHub repo
 and the like for personal branding of the developers.
 
-### Git interlude
-When I Django-created the `boxplot`-application, I realized that my
-git repository started one level too deep. 
-The `startapp` command had given me the Django project file structure
-```
-django$ tree box_whiskers_demo/
-box_whiskers_demo/
-├── boxplot
-│   ├── admin.py
-│   ├── apps.py
-│   ├── __init__.py
-│   ├── migrations
-│   │   └── __init__.py
-│   ├── models.py
-│   ├── tests.py
-│   └── views.py
-├── box_whiskers_demo
-│   ├── asgi.py
-│   ├── __init__.py
-│   ├── pseudocode
-│   │   ├── step1.md
-│   │   ├── step2.md
-│   │   └── step3.md
-│   ├── __pycache__
-│   │   ├── __init__.cpython-38.pyc
-│   │   ├── settings.cpython-38.pyc
-│   │   └── urls.cpython-38.pyc
-│   ├── README.md
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── demo1512.code-workspace
-├── manage.py
-├── __pycache__
-│   └── manage.cpython-38.pyc
-└── sketch1603900755770.png
-
-6 directories, 23 files
-```
-However, my Git repo (and thus GitHub) showed only the files from the 
-`box_whiskers_demo/box_whiskers_demo/` downwards.
-No `manage.py`, no `sketch1603900755770.png`.
-VS Code *Command Palette* `Ctrl+Shift+P`: **Git Close Repository**.
-That removed connection to remote GitHub URL, I think, but the command did not
-[remove the hidden directory](https://stackoverflow.com/questions/1213430)
-`.git`.
-To do that I issue `$ rm -rf .git` from the project root directory.
-`$ find -name .git` gives med the output `./box_whiskers_demo/.git` so I repeat the `rm` there.
-
-This now results in VS Code displaying a lot of text and two buttons:
-- Initialize Repository
-- Publish to GitHub
-
-I feel that I am back on track and in the Django project root directory,
-`$ find -name .git` gives me no output, indicating that all local repo information is gone.
-As requested.
-
-> `$ git init`
-
-gives me, then, a fresh start, locally. 
-I need to make a new GitHub repository: `git` will not syncronize 
-the files in the old GitHub repository with my new local repo,
-without resulting in a doubling of the files already on GitHub.
-I do not want that, so I add the new GitHub repo URL+`.git` as `remote`.
-The expected effect of `git push` (after `commit`): 
-Public access to files on GitHub repo.
-
-
 Step 1: Data entered into system
 ---
 - Show link to a valid CSV file, the user can download for demo purposes.
 - Show button "Grasp CSV file"
 - Read CSV file and store it in database
+- Database in Django are [`model.py`](../../boxplot/models.py). Models are declared as 
 - Show button "Proceed to student selection" ([step 2](./step2.md))
 
 `django/box_whiskers_demo$ python manage.py runserver` gives me a neat 
-Django landing page, and from here, I continue tracking the 
+Django [landing page](http:::127.0.0.1:8000), and from here, I continue tracking the 
 [Django tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/).
 
 Test suite
 ---
-But I also have to locate in which script files to put the following tests:
+But I also have to locate in which script files to put the following tests.
+In terms of certification, [pydoc](https://docs.python.org/3/library/pydoc.html) 
+shows up but also [doctest](https://docs.pytest.org/en/stable/doctest.html):
 1. Link to data file properly formed HTML: Anchor, `<a `...`href="`URL`"`...`>`txt`</a>`.
-   - [Directive](https://docs.python.org/2.4/lib/doctest-options.html)
+   - [Directive](https://docs.python.org/3/library/doctest.html#doctest-directives)
      to `doctest`: `+ELLIPSIS`, som tillader `...` i test.
    - Functional test
      (Selenium) actually getting a file?
