@@ -46,7 +46,8 @@ class AssesmentScores(models.Model):
     sammenhæng = models.IntegerField('Sammenhæng')
     konklusion = models.IntegerField('Konklusion')
 
-# Django-opfølgning
-# - Dette modul ()= denne fil) tilføjes listen INSTALLED_APPS (fil: projekt-mappe/settings.py)
-#   ??? Men er modulets navn er så 'django.contrib.models' eller 'boxplot.models' ???
-# Bootstrapping
+# Manual bootstrapping in Django iPython prompt (`python manage.py shell`), see:
+# https://docs.djangoproject.com/en/3.1/intro/tutorial02/#playing-with-the-api
+# You may want to hit the TAB after having typed
+# `from boxplot.models import Klasse, Elev, Aflevering, As`
+# (Last class name is automatically extended to `AssertmentScores`)
