@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # My models here
 class Klasse(models.Model):
@@ -14,7 +15,7 @@ class Elev(models.Model):
     Kan ikke skille for- og efternavn.
     """
     id         = models.AutoField('Nøgle', primary_key=True)
-    klasse     = models.ForeignKey('Klasse', to=Klasse, on_delete=)
+    klasse     = models.ForeignKey(Klasse, models.DO_NOTHING)
     fulde_navn = models.CharField('Fulde navn', max_length=70)
 
 class Aflevering(models.Model):
@@ -22,7 +23,7 @@ class Aflevering(models.Model):
     niveau: Hvilket år får klassen denne opgave?
     """
     id     = models.AutoField('Nøgle', primary_key=True)
-    klasse = models.ForeignKey('Klassenøgle', to=Klasse)
+    klasse = models.ForeignKey(Klasse, models.DO_NOTHING)
     niveau = models.IntegerField('Klassetrin for aflevering', default=1)
     titel  = models.CharField('Afleveringens titel', max_length=30, default='Model af CoVID19')
     frist  = models.DateField('Afleveringsfrist', default=date(2020, 11, 28))
@@ -30,8 +31,8 @@ class Aflevering(models.Model):
 class AssesmentScores(models.Model):
     """Tabel med aflevering og (for indeværende) 12 score-felter"""
     id = models.AutoField('Nøgle', primary_key=True)
-    aflevering = models.ForeignKey('Afleveringsnøgle', to=Aflevering, to_field=id)
-    elev       = models.ForeignKey('Elevnøgle',        to=Elev,       to_field=navn)
+    aflevering = models.ForeignKey(Aflevering,models.DO_NOTHING)
+    elev       = models.ForeignKey(Elev,models.DO_NOTHING)
     opg1       = models.IntegerField('Opg1')
     opg2       = models.IntegerField('Opg2')
     opg3       = models.IntegerField('Opg3')

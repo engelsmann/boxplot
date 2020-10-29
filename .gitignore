@@ -4,5 +4,7 @@ sketch1603900755770.png
 manage.py
 box_whiskers_demo/settings.py
 box_whiskers_demo/__pycache__/*
-boxplot/migrations/*
+boxplot/__pycache__/*
+boxplot/migrations/__pycache__/*
+boxplot/__pycache__/models.cpython-38.pyc
 db.sqlite3
