@@ -1,6 +1,9 @@
 from django.db import models
 from datetime import date
 
+# Does not validate manual inputs (documentation says form inputs from users are validated)
+from django.core.validators import MinValueValidator, MaxValueValidator
+
 # My models here
 class Klasse(models.Model):
     """Skoleklasses 'navn', startår, og navn på skolen
@@ -9,6 +12,10 @@ class Klasse(models.Model):
     skole    = models.CharField('Skolens navn', max_length=70, default="Frederiksborg Gymnasium og HF")
     navn     = models.CharField('Betegnelse', max_length=10, default='1a')
     start_år = models.IntegerField('Startår', default=2019)
+    def __str__(self):
+        """Klassen, som den vises, når den skal 'udskrives'
+        """
+        return f"{self.navn} ({self.start_år}), {self.skole}"
 
 class Elev(models.Model):
     """Person. Kun fulde navn registreret.
@@ -17,6 +24,10 @@ class Elev(models.Model):
     id         = models.AutoField('Nøgle', primary_key=True)
     klasse     = models.ForeignKey(Klasse, models.DO_NOTHING)
     fulde_navn = models.CharField('Fulde navn', max_length=70)
+    def __str__(self):
+        """Elev til udskrivning
+        """
+        return f"{self.fulde_navn}, {self.klasse}"
 
 class Aflevering(models.Model):
     """Opgaven, der afleveres
@@ -27,13 +38,23 @@ class Aflevering(models.Model):
     niveau = models.IntegerField('Klassetrin for aflevering', default=1)
     titel  = models.CharField('Afleveringens titel', max_length=30, default='Model af CoVID19')
     frist  = models.DateField('Afleveringsfrist', default=date(2020, 11, 28))
+    def __str__(self):
+        """Præsentation af afleveringen
+        """
+        return f"'{self.titel}', {self.klasse.navn} ({self.klasse.start_år}/{self.niveau}) {self.klasse.skole}, senest: {self.frist}"
+    def forfalden(self):
+        """Returnerer TRUE, hvis afleveringen er over fristen
+        """
+        return self.frist > date.today()
 
 class AssesmentScores(models.Model):
     """Tabel med aflevering og (for indeværende) 12 score-felter"""
     id = models.AutoField('Nøgle', primary_key=True)
     aflevering = models.ForeignKey(Aflevering,models.DO_NOTHING)
     elev       = models.ForeignKey(Elev,models.DO_NOTHING)
-    opg1       = models.IntegerField('Opg1')
+    
+    # https://docs.djangoproject.com/en/3.1/ref/validators/
+    opg1       = models.IntegerField('Opg1', validators=[MinValueValidator(1), MaxValueValidator(4)])
     opg2       = models.IntegerField('Opg2')
     opg3       = models.IntegerField('Opg3')
     opg4       = models.IntegerField('Opg4')
@@ -45,6 +66,19 @@ class AssesmentScores(models.Model):
     diagram    = models.IntegerField('Grafer')
     sammenhæng = models.IntegerField('Sammenhæng')
     konklusion = models.IntegerField('Konklusion')
+    
+    @property
+    def scores(self):
+        """Liste med alle 6+6 scores:
+        opg1, opg2, opg3, opg4, opg5, opg6, tankegang, fagsprog, cas, diagram, sammenhæng, konklusion
+        """
+        return [self.opg1, self.opg2, self.opg3, self.opg4, self.opg5, self.opg6, self.tankegang, self.fagsprog, self.cas, self.diagram, self.sammenhæng, self.konklusion]
+    
+    def __str__(self):
+        """Bedømmelse af en navngiven elev på en bestemt opgave
+        """
+
+        return f"'{self.aflevering.titel}' fra {self.elev.fulde_navn}: {self.scores}"
 
 # Manual bootstrapping in Django iPython prompt (`python manage.py shell`), see:
 # https://docs.djangoproject.com/en/3.1/intro/tutorial02/#playing-with-the-api
