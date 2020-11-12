@@ -1,0 +1,14 @@
+{% load static %}<!DOCTYPE html lang="da">
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Morten Demo web app</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}"/>
+    </head>
+    <body>
+        <h1>Velkommen til min første Django Web App</h1>
+        {% for klasse in latest_classes_list %}
+            <p>{{ klasse.navn }}</p>
+        {% endfor %}
+    </body>
+</html>

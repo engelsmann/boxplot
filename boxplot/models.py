@@ -1,7 +1,8 @@
 from django.db import models
-from datetime import date
+from datetime import date, datetime
 
-# Does not validate manual inputs (documentation says form inputs from users are validated)
+# Does not !?! validate manual inputs 
+# (but documentation says form inputs from users are validated)
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 # My models here
@@ -9,11 +10,12 @@ class Klasse(models.Model):
     """Skoleklasses 'navn', startår, og navn på skolen
     """
     id       = models.AutoField('Nøgle', primary_key=True)
+    oprettet = models.DateTimeField('Tid for oprettelse', default=datetime.now)
     skole    = models.CharField('Skolens navn', max_length=70, default="Frederiksborg Gymnasium og HF")
     navn     = models.CharField('Betegnelse', max_length=10, default='1a')
     start_år = models.IntegerField('Startår', default=2019)
     def __str__(self):
-        """Klassen, som den vises, når den skal 'udskrives'
+        """Klasse (gruppe elever)
         """
         return f"{self.navn} ({self.start_år}), {self.skole}"
 
@@ -22,10 +24,14 @@ class Elev(models.Model):
     Kan ikke skille for- og efternavn.
     """
     id         = models.AutoField('Nøgle', primary_key=True)
-    klasse     = models.ForeignKey(Klasse, models.DO_NOTHING)
+    oprettet = models.DateTimeField('Tid for oprettelse', default=datetime.now)
     fulde_navn = models.CharField('Fulde navn', max_length=70)
+    # Til hardcoding af FOREIGNKEY:
+    # https://stackoverflow.com/a/2846537/888033
+    klasse     = models.ForeignKey('Klasse', models.DO_NOTHING)
+    
     def __str__(self):
-        """Elev til udskrivning
+        """Navngiven elev 
         """
         return f"{self.fulde_navn}, {self.klasse}"
 
@@ -33,14 +39,19 @@ class Aflevering(models.Model):
     """Opgaven, der afleveres
     niveau: Hvilket år får klassen denne opgave?
     """
-    id     = models.AutoField('Nøgle', primary_key=True)
-    klasse = models.ForeignKey(Klasse, models.DO_NOTHING)
-    niveau = models.IntegerField('Klassetrin for aflevering', default=1)
-    titel  = models.CharField('Afleveringens titel', max_length=30, default='Model af CoVID19')
-    frist  = models.DateField('Afleveringsfrist', default=date(2020, 11, 28))
+    id       = models.AutoField('Nøgle', primary_key=True)
+    oprettet = models.DateTimeField('Tid for oprettelse', default=datetime.now)
+    senest   = models.DateTimeField('Seneste ændring', default=datetime.now)
+    klasse   = models.ForeignKey('Klasse', models.DO_NOTHING)
+    niveau   = models.IntegerField('Klassetrin for aflevering', default=1)
+    titel    = models.CharField('Afleveringens titel', max_length=30, default='Model af CoVID19')
+    frist    = models.DateField('Afleveringsfrist', default=date(2020, 11, 28))
+
     def __str__(self):
         """Præsentation af afleveringen
         """
+        # pylint: disable=E1101
+        # https://stackoverflow.com/a/57019528/888033
         return f"'{self.titel}', {self.klasse.navn} ({self.klasse.start_år}/{self.niveau}) {self.klasse.skole}, senest: {self.frist}"
     def forfalden(self):
         """Returnerer TRUE, hvis afleveringen er over fristen
@@ -49,10 +60,13 @@ class Aflevering(models.Model):
 
 class AssesmentScores(models.Model):
     """Tabel med aflevering og (for indeværende) 12 score-felter"""
-    id = models.AutoField('Nøgle', primary_key=True)
-    aflevering = models.ForeignKey(Aflevering,models.DO_NOTHING)
-    elev       = models.ForeignKey(Elev,models.DO_NOTHING)
+    id         = models.AutoField('Nøgle', primary_key=True)
+    oprettet   = models.DateTimeField('Tid for oprettelse', default=datetime.now)
+    senest     = models.DateTimeField('Seneste ændring', default=datetime.now)
+    aflevering = models.ForeignKey('Aflevering', models.DO_NOTHING)
+    elev       = models.ForeignKey('Elev', models.DO_NOTHING)
     
+    # Min og Max skal lige prøves af, inden jeg bruger tid på at kode dem for alle 6+6 felter
     # https://docs.djangoproject.com/en/3.1/ref/validators/
     opg1       = models.IntegerField('Opg1', validators=[MinValueValidator(1), MaxValueValidator(4)])
     opg2       = models.IntegerField('Opg2')
@@ -77,8 +91,8 @@ class AssesmentScores(models.Model):
     def __str__(self):
         """Bedømmelse af en navngiven elev på en bestemt opgave
         """
-
-        return f"'{self.aflevering.titel}' fra {self.elev.fulde_navn}: {self.scores}"
+        # pylint: disable=E1101
+        return f"Opgave '{self.aflevering.titel}' fra {self.elev.fulde_navn}: {self.scores}"
 
 # Manual bootstrapping in Django iPython prompt (`python manage.py shell`), see:
 # https://docs.djangoproject.com/en/3.1/intro/tutorial02/#playing-with-the-api

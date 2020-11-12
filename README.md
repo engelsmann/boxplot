@@ -16,7 +16,9 @@ Til udviklingen har jeg især hentet inspiration på følgende sider:
 
 - https://tutorial.djangogirls.org/en/deploy/
 - https://help.pythonanywhere.com/pages/IntegratingWithPythonAnywhere/
-- http://www.obeythetestinggoat.com/book/part1.harry.htmlr
+- [Obey the testing Goat](http://www.obeythetestinggoat.com/book/part1.harry.html)
+- The [Joel Test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
+- http://www.django-introduction.com/index.en.html#/
 
 Ja, jeg er godt klar over, at dette repo blander dokumentation og kode.
 Det er ike optimalt, men det er for ikke at skulle holde flere bolde i luften
@@ -57,8 +59,8 @@ og Django-projektets egen
 - **View**: visualiserer 6+6 boxplots for afleveringsopgaven 
   i denne klasse **samt** fremhæver den valgte elevs præstation.
   Views *kan* benytte sig af skabeloner, **Templates**.
-  Sammensat `matplotlib` med et lag af boxplots (fordeling for den samlede klasse)
-  og et lag af prikker (viser den valgte elev).
+  Sammensat `matplotlib` med et lag af 6+6 boxplots (fordeling for den samlede klasse)
+  og et lag af 6+6 prikker (viser den valgte elev).
 - **Controller**: vælger elev fra en given klasse.
 
 ![MTV eller MVC?](https://miro.medium.com/max/500/1*pHlF3KufWwX7svv4Mv4Frg.jpeg "https://medium.com/shecodeafrica/understanding-the-mvc-pattern-in-django")
@@ -106,3 +108,16 @@ der måske vil afklare min fremgangsmåde.
 1. Gennemføre test lokalt (i udviklingsmiljøet: hovedsageligt enhedstest) 
    og - når lokal test OK - remote 
    (i produktionsmiljøet: hovedsageligt funktionelle test). 
+
+# Django-projekt, Django-app
+# Klient-forespørgsel og server-svar i Django
+![Request-response-cycle](https://tas-dp-prod-media.s3.amazonaws.com/blog/reqresp.jpg)
+[Request response cycle](https://www.technoarchsoftwares.com/blog/django-request-response-cycle/
+![Django ]
+# Flytte projektet over i skyen
+Jeg overvejer pt to muligheder for at lægge et fungerende lokalt projekt
+op i skyen:
+- [Azure web app](https://docs.microsoft.com/da-dk/azure/app-service/tutorial-python-postgresql-app?tabs=bash%2Cclone)
+  (som måske kræver PostgreSEQL), eller
+- [PythonAywhere.com](PythonAywhere.com)
+  som er 

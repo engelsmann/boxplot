@@ -6,6 +6,12 @@ Multiple performance indicators (PI) need to be included,
 but in this demo, only the PI of assessment data from 
 a single written assignment is included.
 
+After
+[changing the Git base directory](https://stackoverflow.com/a/1213449/888033)
+locally and deleting the old GitBub repo, I succeeded in running
+version control with 
+[Git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
+
 Three step overview
 ---
 Within the Django *project* `box_whiskers_demo`, a 
@@ -61,16 +67,64 @@ Step 1: Data entered into system
 Django [landing page](http:::127.0.0.1:8000), and from here, I continue tracking the 
 [Django tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/).
 
+### Documentation in `pydoc` - from DocStrings
+Python documentation should follow
+[PEP 257](https://www.python.org/dev/peps/pep-0257/)
+on "Docstring Conventions".   
+
+When trying to extract documentation from `foo.py` using `pydoc` e.g. as
+`$  pydoc foo`, I get the desired outcome, 
+while `$  pydoc foo.py` give me an error.
+
+When trying to extract documentation using `pydoc` e.g. as
+`boxplot$  pydoc models.py`,
+I get 
+> ImproperlyConfigured: Requested setting INSTALLED_APPS ...
+
+Following [this advice](https://stackoverflow.com/a/50075525/888033),
+I therefore tried `pydoc` in the IPython prompt served up by
+`$ python manage.py shell`.
+- How do I run `pydoc` from **within a Python prompt**?
+  > Check out [this SO answer](https://stackoverflow.com/a/61879712/888033)
+
+I refreshed my knowledge by following this DataCamp 
+[course on functions](https://campus.datacamp.com/courses/writing-functions-in-python/best-practices)
+(chapter 1), and 
+
+NB: Alternatives to `pydoc` include: 
+- [`admindocs`](https://docs.djangoproject.com/en/3.1/ref/contrib/admin/admindocs/)
+  from Django.
+- [reStructuredText](https://docutils.sourceforge.io/rst.html), 
+  which is nicely presented by Bryson in
+  [this 2018 pyCon presentation](https://youtu.be/JQ8RQru-Y9Y),
+  including mentioning the Sphinx > GitHub > Read the Docs pipe.
+- In the `docstring` you can put simple (unit) testing and 
+  run the test using 
+  [the Doctest module](https://docs.pytest.org/en/stable/doctest.html).
+
+Best practice in function design
+---
+- DRY: Don't repeat yourself.
+- DOT: Do one thing.
+ [Refactor](https://martinfowler.com/books/refactoring.html)
+ existing code, if needed, to live up to the DRY and DOT principles.
+
 Test suite
 ---
 But I also have to locate in which script files to put the following tests.
 In terms of certification, [pydoc](https://docs.python.org/3/library/pydoc.html) 
-shows up but also [doctest](https://docs.pytest.org/en/stable/doctest.html):
-1. Link to data file properly formed HTML: Anchor, `<a `...`href="`URL`"`...`>`txt`</a>`.
+shows up but also [doctest](https://docs.pytest.org/en/stable/doctest.html).
+
+For functional tests (`Selenium` based), it was paramount to run the 
+test scripts **outside** Visual Studio Code. 
+Running `$ python my_test_script.py` in system (not VSC) terminal got me going with
+automated-browser-based testing.
+1. Link to the proposed data file is formed properly as HTML:
+   Anchor, `<a `...`href="`URL`"`...`>`txt`</a>`.
    - [Directive](https://docs.python.org/3/library/doctest.html#doctest-directives)
-     to `doctest`: `+ELLIPSIS`, som tillader `...` i test.
-   - Functional test
-     (Selenium) actually getting a file?
+     to `doctest`: `+ELLIPSIS`, allowing `...` in test.
+   - Functional test (`Selenium`):
+     Are we actually served a file on clicking the link?
 1. Link to data file points to file
    - URL starts `file://`
 1. Link to data file points to file of type CSV
@@ -83,11 +137,13 @@ shows up but also [doctest](https://docs.pytest.org/en/stable/doctest.html):
      (Selenium) Success indicator upon non-failed file upload?
 1. (Uploaded file rejected if extension not CSV)
    - Upon attempted upload, ...
-   - Functional test
+   - Functional test:
      (Selenium) Failure indicator upon failed file upload?
 1. ~~Uploaded file rejected if file encoding not UTF-8~~ (?)
-1. Uploaded file rejected if columns count is not 1+1+1+1+6+6=16 (class + student name + 
-   asignment deadline + assignment title + 6 excercises + 6 learning objectives)
+1. Uploaded file rejected if columns count is not 2+2+6+6=16:
+   (class + student name + 
+   assignment title + asignment deadline +
+   6 excercises + 6 learning objectives)
    - Test `len(col_name_list)==16`
 1. Uploaded file rejected if column headers are **not** as tuple of strings (expected col heads)
    - [Convert list of col names to tuple](https://www.geeksforgeeks.org/python-convert-a-list-into-a-tuple/)
