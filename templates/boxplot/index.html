@@ -4,11 +4,70 @@
         <meta charset="UTF-8" />
         <title>Morten Demo web app</title>
         <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
     <body>
-        <h1>Velkommen til min første Django Web App</h1>
-        {% for klasse in latest_classes_list %}
-            <p>{{ klasse.navn }}</p>
+        <h1>Mortens første Django Web App</h1>
+        <h2>HTML FORM</h2>
+        <p>When specified with no attributes, as below, the
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"
+           title="MOZILLA LEARN: The HTML <form> element represents a document section containing interactive controls for submitting information.">
+               <code>&lt;form&gt;</code>
+        </a> 
+        data is sent to the same page that the form is present on...</p>
+        <!-- Fra tutorial -->
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <form method="post">
+        {% csrf_token %}
+        {% for samtalepartner in elev %}
+            <input type="radio" 
+                   name="elev" 
+                   id="elev{{ forloop.counter  }}" 
+                   value="{{ samtalepartner.id }}">
+            <label for="elev{{ forloop.counter  }}">
+                {{ samtalepartner.fulde_navn }}
+            </label>
+            <br>
         {% endfor %}
+        <input type="submit" value="Fremhæv valgte">
+        </form>
+        <h2>Data input</h2>
+        <p>Afleveringer:</p>
+        <ul>
+            {% for k in seneste_aflevering_list %}
+            <li>{{ k.titel }}</li>
+            {% endfor %}
+        </ul>
+        <p class="todo">Huskeliste:</p>
+        <ul class="todo" title="To Do List" >
+           <!-- class="done" -->
+           <li class="done">Liste med registrerede afleveringsopgaver registreres ikke som skabelon-variabel</li> 
+           <li class="">(Nedarvning af skabelon)</li>
+           <li class="">(Link til fil download)</li>
+           <li class="">(Knap til upload af fil)</li>
+           <li class="">Interaktivitet
+              <ol>
+                <li class="done">Elevnavne hentes over i skabelon.</li>
+                <li class="">Dropdown felt vises og 1 elev kan vælges fra listen.</li>
+                <li class="">Valgt elev vises som <i>overlay</i>.</li>
+                <li class="">For at fungere kræver en dropdown at være del af en HTML FORM.</li>
+                <li class="">Jeg starter med at følge 
+                    <a href="https://docs.djangoproject.com/en/3.1/intro/tutorial04/"
+                       title="Django documentation site, tutorial 4">Tut 4</a>.
+                </li>
+                <li></li>
+              </ol>    
+           </li>
+           <li class="">Huskelistens punkter enten afkrydsningsfirkant eller flueben
+               (Unicode 0x25a1: □, 0x2714: ✔).</li>
+           <li class="">Test automatiseres i overensstemmelse med 
+               <a href="https://www.obeythetestinggoat.com/book/part1.harry.html">Obey the Testing Goat</a>-bogen.
+               (Funktionelle tests med <b>Selenium</b> browserautomatisering
+               og enhedstests med Pythons <code>unittest</code> modul).
+           </li>
+           <li class="done">Statiske filer (CSS, favicon) har et sted at bo.</li>
+           <li class="done">QuerySet overføres som liste til <code>View</code> / skabelon.</li>
+           <li class="done">indbyggede skabelon-<code>tag</code>s opfattes som ønsket.</li>
+        </ul>
     </body>
 </html>

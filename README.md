@@ -110,11 +110,20 @@ der måske vil afklare min fremgangsmåde.
    (i produktionsmiljøet: hovedsageligt funktionelle test). 
 
 # Django-projekt, Django-app
+- Jeg har kaldt **projektet** `box-whiskers-demo`.
+  Jeg har oprettet projektet med `django-admin startproject box-whiskers-demo`. 
+  Derved oprettes bl.a. filerne `settings.py` og `urls.py`, samt `manage.py` og
+  undermappe med samme navn som projektmappen, altså `box-whiskers-demo/box-whiskers-demo`.
+  Og her har jeg lagt mapper med statiske filer, `box-whiskers-demo/static`,
+  og med skabeloner til app'en, `box-whiskers-demo/templates/boxplot`.
+  Det er fra **projektmappen**, at jeg kører `python manage runserver`, ... ` makemigrations` og ... `migrate`, og hvor jeg fedtede lidt rundt med `python manage.py shell`
+- Jeg har kaldt **appen** `boxplot`.
+  Appen er tilknyttet mine *Models* og mine *Views*.
 # Klient-forespørgsel og server-svar i Django
 ![Request-response-cycle](https://tas-dp-prod-media.s3.amazonaws.com/blog/reqresp.jpg)
-[Request response cycle](https://www.technoarchsoftwares.com/blog/django-request-response-cycle/
-![Django ]
-# Flytte projektet over i skyen
+[Request response cycle](https://www.technoarchsoftwares.com/blog/django-request-response-cycle/)
+
+# Migrere projektet fra lokal udviklingsserver til produktion i skyen
 Jeg overvejer pt to muligheder for at lægge et fungerende lokalt projekt
 op i skyen:
 - [Azure web app](https://docs.microsoft.com/da-dk/azure/app-service/tutorial-python-postgresql-app?tabs=bash%2Cclone)

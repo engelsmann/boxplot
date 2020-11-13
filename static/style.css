@@ -1,4 +1,8 @@
 /* https://docs.djangoproject.com/en/3.1/intro/tutorial06/ */
-li a {
+.todo {
+    color: red;
+}
+.done {
     color: green;
+    text-decoration: line-through;
 }
