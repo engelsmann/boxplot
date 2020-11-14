@@ -121,6 +121,7 @@ der måske vil afklare min fremgangsmåde.
   Appen er tilknyttet mine *Models* og mine *Views*.
 # Klient-forespørgsel og server-svar i Django
 ![Request-response-cycle](https://tas-dp-prod-media.s3.amazonaws.com/blog/reqresp.jpg)
+
 [Request response cycle](https://www.technoarchsoftwares.com/blog/django-request-response-cycle/)
 
 # Migrere projektet fra lokal udviklingsserver til produktion i skyen

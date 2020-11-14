@@ -7,14 +7,16 @@
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
     <body>
-        <h1>Mortens første Django Web App</h1>
+        <h1>My 1st Django App</h1>
         <h2>HTML FORM</h2>
-        <p>When specified with no attributes, as below, the
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"
-           title="MOZILLA LEARN: The HTML <form> element represents a document section containing interactive controls for submitting information.">
-               <code>&lt;form&gt;</code>
-        </a> 
-        data is sent to the same page that the form is present on...</p>
+        <p>
+            When specified with no attributes, as below, the
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"
+               title="MOZILLA LEARN: The HTML <form> element represents a document section containing interactive controls for submitting information.">
+                   <code>&lt;form&gt;</code>
+            </a> 
+            data is sent to the same page that the form is present on.
+        </p>
         <!-- Fra tutorial -->
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
         <form method="post">
@@ -25,12 +27,17 @@
                    id="elev{{ forloop.counter  }}" 
                    value="{{ samtalepartner.id }}">
             <label for="elev{{ forloop.counter  }}">
+                {% if samtalepartner.id|slugify == request.POST.elev %}
+                <b>{{ samtalepartner.fulde_navn }}</b>
+                {% else %}
                 {{ samtalepartner.fulde_navn }}
+                {% endif %}
             </label>
             <br>
         {% endfor %}
         <input type="submit" value="Fremhæv valgte">
         </form>
+        {% if request.method|upper == 'GET' %}
         <h2>Data input</h2>
         <p>Afleveringer:</p>
         <ul>
@@ -40,22 +47,60 @@
         </ul>
         <p class="todo">Huskeliste:</p>
         <ul class="todo" title="To Do List" >
-           <!-- class="done" -->
+           <!-- class="done" eller tom. -->
+           <li class="done">Statiske filer (CSS, favicon) har et sted at bo.</li>
+           <li class="done">indbyggede skabelon-<code>tag</code>s opfattes som ønsket.</li>
            <li class="done">Liste med registrerede afleveringsopgaver registreres ikke som skabelon-variabel</li> 
-           <li class="">(Nedarvning af skabelon)</li>
-           <li class="">(Link til fil download)</li>
-           <li class="">(Knap til upload af fil)</li>
+           <li class="">
+               Data <i>bootstrap</i>pes ind i appen: 
+               Liste med <code>Elever</code> fra <code>Klasse</code> på test-<code>Skole</code>.
+               Bedømt demo-<code>Aflevering</code> og
+               tilhørende <code>AssessmentScore</code> for hver elev i klassen.
+           </li>
            <li class="">Interaktivitet
               <ol>
-                <li class="done">Elevnavne hentes over i skabelon.</li>
-                <li class="">Dropdown felt vises og 1 elev kan vælges fra listen.</li>
-                <li class="">Valgt elev vises som <i>overlay</i>.</li>
-                <li class="">For at fungere kræver en dropdown at være del af en HTML FORM.</li>
                 <li class="">Jeg starter med at følge 
                     <a href="https://docs.djangoproject.com/en/3.1/intro/tutorial04/"
                        title="Django documentation site, tutorial 4">Tut 4</a>.
+                    Den fjerde del af vejledningen indfører <i>blanketter</i>,
+                    eller <code>form</code>-elementer på siden.
                 </li>
-                <li></li>
+                <li class="">
+                    Dokumentation af
+                    <a href="https://docs.djangoproject.com/en/3.1/topics/forms/#building-a-form-in-django"
+                       title="Official Django documentation on the 'Working with Forms'">
+                       Django <code>Forms</code> klassen
+                    </a>
+                    og <code>myproj/boxplot/forms.py</code> filen.
+                </li>
+                <li class="done">
+                    Elevnavne hentes over i skabelon: 
+                    Fra
+                    <a href="https://github.com/engelsmann/boxplot/blob/054fac967c31222186117a832141172e0289d2e7/boxplot/views.py#L26"
+                       title="Link til GitHub versionen af filen, da dette lykkedes. Kan senere være opdateret yderligere, men denne version var første gang det lykkedes at få Elev-data over i index-skabelonen.">
+                            <code>views.py</code> sendes
+                    </a>  
+                    et <code>QuerySet</code> hentet i <code>Elev</code>-modellen
+                    og <i>castet</i> som liste.
+                    Listen sendes med <code>render()</code>-parameteren
+                    <code>context</code> til det <i>template</i>,
+                    som ligeledes udpeges overfor <code>render()</code>.
+                </li>
+                <li class="done">
+                    Info som ikke har med funktionaliteten, men mere er til læringsbrug,
+                    <b>skjules</b> når en elev er valgt og FORM indsendt 
+                    (<code>POST</code>ed).
+                </li>
+                <li class="">
+                    For at fungere kræver en dropdown at være del af en HTML FORM.
+                    Men hvordan skal jeg bruge Django Forms'
+                    <a href="https://docs.djangoproject.com/en/3.1/ref/forms/fields/#choicefield">Choicefield</a>,
+                    så det bliver element i den <code>Form</code>, 
+                    jeg har oprettet i <code>index.html</code> skabelonen?
+                </li>
+                <li class="">Dropdown felt vises og 1 elev kan vælges fra listen.</li>
+                <li class="">Valgt elev vises som <i>overlay</i>.</li>
+                <li class=""></li>
               </ol>    
            </li>
            <li class="">Huskelistens punkter enten afkrydsningsfirkant eller flueben
@@ -65,9 +110,24 @@
                (Funktionelle tests med <b>Selenium</b> browserautomatisering
                og enhedstests med Pythons <code>unittest</code> modul).
            </li>
-           <li class="done">Statiske filer (CSS, favicon) har et sted at bo.</li>
-           <li class="done">QuerySet overføres som liste til <code>View</code> / skabelon.</li>
-           <li class="done">indbyggede skabelon-<code>tag</code>s opfattes som ønsket.</li>
+           <li class="">
+               For at kunne samle GIT gren <code>test_suite_1</code> med
+               <code>main</code> på GitHub sørger jeg for at følge
+               <a href="https://docs.djangoproject.com/en/3.1/intro/tutorial05/"
+                  title="Django Tutorial, del 6 om automatiserede test">
+                  Tut5,
+                </a>
+                så en
+                <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests">
+                    pull request
+                </a>
+                kan behandles (grenene samles, <i>merge</i>s) på GitHub.
+           </li>
+           <li class="">(Nedarvning af skabelon) - 
+               ikke nødvendig, fordi jeg nøjes med at bruge en side, <code>index</code>.</li>
+           <li class="">(Link til fil download) - udelades i minimal første version.</li>
+           <li class="">(Knap til upload af fil) - udelades i minimal første version.</li>
         </ul>
+        {% endif %}
     </body>
 </html>

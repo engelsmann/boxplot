@@ -58,7 +58,7 @@ class Aflevering(models.Model):
         """
         return self.frist > date.today()
 
-class AssesmentScores(models.Model):
+class AssesmentScore(models.Model):
     """Tabel med aflevering og (for indeværende) 12 score-felter"""
     id         = models.AutoField('Nøgle', primary_key=True)
     oprettet   = models.DateTimeField('Tid for oprettelse', default=datetime.now)
@@ -98,4 +98,4 @@ class AssesmentScores(models.Model):
 # https://docs.djangoproject.com/en/3.1/intro/tutorial02/#playing-with-the-api
 # You may want to hit the TAB after having typed
 # `from boxplot.models import Klasse, Elev, Aflevering, As`
-# (Last class name is automatically extended to `AssertmentScores`)
+# (Last class name is automatically extended to `AssertmentScore`)
