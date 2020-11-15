@@ -70,10 +70,47 @@ Step 1: Data entered into system
       `Elev.id` lives in template variable `request.POST.elev`.
       (In the FORM, the input field of `type="radio"` attributed `name="elev"`
       takes the value `Elev.id`, the table's primary key).
+   1. In order to **use** the `AssessmentScore` data, 
+      **the related Django Model needs to be populated**.
+      To carry out this
+      [ETL](https://en.wikipedia.org/wiki/Extract,_transform,_load)
+      workflow, I want to use the `admin/` pages, so I head over to
+      http://127.0.0.1:8000/admin/ and log in.
+      But I can't use the Model's `admin/` page, as I want to **import**,
+      I do not want to key in all individual data...
+      Therefore, I turn to [pandas](https://pandas.pydata.org/).
+      The entire, rather hand held ETL process is documented in the
+      [`data_import.py` file](.../../data_import.py).
+      Quite a lot of the ETL was done, however, in R, and the script responsible 
+      for that piece of work is `ETL+pres-COVID-aflevering.R`.
+      What is needed in ETL, is:
+      - Read CSV (Pandas) file `cov-11x51-2f.csv` with 11 submissions.
+        Names must be altered due to data protection.
+      - In a `while` loop, `cycle` CSV data rows on registered `Elev` entries
+        filtered for `Klasse.navn=='1test'`.
+        The result of this will be the QuerySet
+        `AssessmentScore.object.filter(klasse=Klasse.object.filter(Klasse.navn='1test').id)`.
+      - This QuerySet must then be prepared to produce a
+        [matplotlib.boxplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html)
+        plot, to use as background for the presentations of
+        individual student performances, and thus a **storing mechanism**
+        for the plot must be chosen, in order for it to be retrieved quickly.
+        Options include 
+        [`pickle`](https://docs.python.org/3/library/pickle.html), 
+        [LRU](https://realpython.com/lru-cache-python/), or
+        a 
+        [cache `dict`](https://www.blog.pythonlibrary.org/2016/02/25/python-an-intro-to-caching/),
+        but are not limited the these ones.
+      - Finally (meaning *ready for functional testing*),
+        the selected student's performance is overlaid,
+        and the entire, glorious result is presented on in separate
+        Django View
+        (with back reference to the `index` to select another student).
+
      
 - Show button "Proceed to student selection" ([step 2](./step2.md))
 
-`django/box_whiskers_demo$ python manage.py runserver` gives me a neat 
+`$ python manage.py runserver` gives me a neat 
 Django [landing page](http:::127.0.0.1:8000), and from here, I continue tracking the 
 [Django tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/).
 
@@ -114,6 +151,7 @@ NB: Alternatives to `pydoc` include:
 
 Best practice in function design
 ---
+Inspired by the above mentioned Datacamp course:
 - DRY: Don't repeat yourself.
 - DOT: Do one thing.
  [Refactor](https://martinfowler.com/books/refactoring.html)

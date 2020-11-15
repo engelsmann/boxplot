@@ -7,3 +7,4 @@ box_whiskers_demo/__pycache__
 boxplot/__pycache__
 boxplot/migrations/__pycache__
 .vscode
+tmp.txt.py

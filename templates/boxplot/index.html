@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     </head>
     <body>
+        {% if request.method|upper == 'GET' %}
         <h1>My 1st Django App</h1>
         <h2>HTML FORM</h2>
         <p>
@@ -17,6 +18,7 @@
             </a> 
             data is sent to the same page that the form is present on.
         </p>
+        {%  endif  %}
         <!-- Fra tutorial -->
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
         <form method="post">

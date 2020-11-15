@@ -1,11 +1,15 @@
 # coding: utf-8
-# Importation done by hand (copied from `$ python manage.py shell`
-# iPython sesson  with `%save data_import.py` in the iPython prompt).
+
+# This file is to record the importation done by hand 
+# (copied from `$ python manage.py shell` iPython sesson  
+# with `%save data_import.py` in the iPython prompt).
 import csv
 import boxplot.models as bm
 # get() assures at most 1 record is returned 
 # pylint: disable=no-member
 klassen = bm.Klasse.objects.get(navn='1test')
+klassen.id
+# 3
 
 with open("/home/morten/Dropbox/Python/bedom/quiz1.csv") as quiz:
     quiz = csv.reader(quiz)
@@ -19,3 +23,10 @@ with open("/home/morten/Dropbox/Python/bedom/quiz1.csv") as quiz:
             elev.save()
         i += 1
    
+len(bm.Elev.objects.all())
+# 25
+
+# Pick all students from class '1test'
+# Note that 'Elev.klasse' i a ForeignKey, as is 'Klasse.navn'.
+# And 'Klasse.id' is the referred-to primary key.
+flok = bm.Elev.objects.filter( klasse = bm.Klasse.objects.get(navn='1test').id )
