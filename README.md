@@ -1,18 +1,35 @@
 `file: box_whiskers_demo/README.md`
 # Demo
-Websitet <http://engelsmann.eu.pythonanywhere.com>
-præsenterer boxplot-visualisering af en elevs præstation set
-på bagtæppet af elevens klasses samlede præstationer.
-Applikationen er ment som en blandt flere komponenter i lærerens feed-back
-til elever i en fiktiv klasse:
-Bedømmelse af en fiktiv opgave med klassens samlede fordeling 
-af præstationer for hvert kriterium samt den valgte elevs præstation.
+The Website <http://engelsmann.eu.pythonanywhere.com>
+presents boxplot-visualisation of a the performance of 
+a selected *student*'s (`Elev`) in a given `Klasse` and
+with an *assignment* (`Aflevering`) speficied.
 
-Dette *repository* skal tjene som en komponent i den demo for Morten's Python-færdigheder,
-som er under udvikling efter et kursus i september og oktober 2020 om Python og Machine Learning.
-Den kode, du finder i dette *repo*, ~~kører~~ *live*, dynamisk, interaktivt 
-på PythonAnywere.
-Til udviklingen har jeg især hentet inspiration på følgende sider:
+This Django web applikation is meant as one component among several of a
+teacher's dashboard to support the feed-back dialogue in a fictional class.
+For **demonstration** purposes, this app is already supplied with two classes (Django Model) 
+from different scools, each `Klasse` model is related to zero or more students, 
+the `Elev` Django model. One *assignments*, Django model `Aflevering` here,
+is stored, and a fictional set of `AssessmentScore`s are provided.
+
+The functionality of the demo is thus to select a student from the class 
+that happened to submit an assignment and have it assessed by their teacher.
+As part of a round-up feedback session of a few minutes with each individual student,
+the teacher can generate this performance profile on the task specified.
+
+In a **production** setting, students may *enroll* or leave a *class*.
+On an ongoing basis, new *assignments*, Django model `Aflevering` here,
+will be given and students will submit their answers.
+Individually or working and submitting in groups.
+
+This GitHub *repository* is meant to serve as a component in the demo 
+of Morten's Python skills 
+(under development after a course on Python and Machine Learning in October 2020).
+
+The code, you find on this *repo*, ~~rund~~ *live*, dynamically, interactively
+on PythonAnywere and/or Azure.
+For the development of this demo, I have been inspired from a lot of sources,
+amongst which the most notable are:
 
 - https://tutorial.djangogirls.org/en/deploy/
 - https://help.pythonanywhere.com/pages/IntegratingWithPythonAnywhere/
@@ -20,30 +37,66 @@ Til udviklingen har jeg især hentet inspiration på følgende sider:
 - The [Joel Test](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)
 - http://www.django-introduction.com/index.en.html#/
 
-Ja, jeg er godt klar over, at dette repo blander dokumentation og kode.
-Det er ike optimalt, men det er for ikke at skulle holde flere bolde i luften
-i en læringssituation.
+Not to mention numerous StackOverflow answers (and a few of my own questions).
 
-## Starte git repo lokalt
-Følger <https://tutorial.djangogirls.org/en/deploy/>:
-1. Installér 
-   [versionsstyring-programpakken `git`](https://git-scm.com/)
-   (*source control management*).
-1. Opret rod-bibliotek `box-whiskers-demo` for projektet.
-1. Start `git` repo i rod-biblioteket.
-1. Opret `.gitignore`.
-1. Opret projekt ud fra Django.  Opret tests. 
-1. Tilret kode, så tests passeres. *Commit* projekt lokalt med Git.
-1. Upload Git-*commit* til PythonAnywhere. - Kan PythonAnywhere's script 
+And yes, I am painfully aware that the code and the documentation 
+sported on this repository is mixed in a most un-Pythonian, 
+not-at-all-productive manner.
+A refactoring will be necessary in any case for bringing the demo to production.
+Included such a refactoring process will be the integration, using `DocString`s
+and generating separately-stored documentation files, **will** be a priority.
+
+During the weeks of producing this demo, the priority was focused on
+1. Learning the trade of:
+   - Git for version control and GitHub for making the code accessible, 
+   - Python calls using script files from command line, 
+     iPython and Jupyter Notebook,
+   - Visual Studio Code (Integrated Development Environment),
+   - Django (one Python web application framework amongst dozens),
+   - automated testing with probing code with `unittest` and Django test, 
+     web functionality using Selenium, and finally:
+   - cloud computing using Azure (setting up account, 
+     and installing a publicly accessible Web App).
+1. Leaving sufficient traces to be able to go down the same route later,
+   that is: to **document the learning path** - and 
+   to show off to you, the reader.
+
+## Starting git repo locally
+Followed <https://tutorial.djangogirls.org/en/deploy/>, but
+[this short guide](https://rogerdudler.github.io/git-guide/)
+is also fine. Here is what I did:
+1. Installed the
+   [`git` source control management package](https://git-scm.com/).
+1. Created project `box-whiskers-demo` (root folder and paraphernalia)
+   using the `django-admin` tool.
+1. Started repo with `git  init` in root folder,
+   and created the corresponding `boxplot` repo on GitHub, so that I could 
+   checkout with `git clone https://github.io/engelsmann/boxplot.git`.
+1. Created `.gitignore` and started to populate it.
+   Tried a few stagings, `git add`, followed by  `git commit` in order to see
+   how **commit message** works, both in CLI and VSCode.
+   In VSCode it is easy to make comment a headline and some more text in further lines below.
+   Checked that GitHub was appropriately updated on `git push`,
+   and tried to use **commit URL** in GitHub comments, which works convincingly.
+1. Created Django project using the `$ python manage.py startproject `.
+   Branched Got a little better to use line pointers in comments and issues on GitHub.
+1. Develop or correct code, so **unit and functional tests** can be passed.
+   In other words: *Simulate* Test-Driven Development.
+   (To really make the TDD goat happy, you must code **nothing**
+   before you have converted specifications into tests).
+1. Upload Git-*commit* til production (PythonAnywhere / Azure). - Maybe
+   PythonAnywhere's script 
    [upload.py](https://github.com/pythonanywhere/upload-website/blob/master/upload.py)
-   bruges her?
-1. Upload *commitment* til GitHub. - Kan `git` noget her?
-   Eller er det bedre at gå omkring en
-   [udbringningsnøgle / *deploymment key*](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#deploy-keys)?
+   is of avail here?
+1. *Push commit*s to GitHub. - Can `git` help production and GitHub communicate?
+   Or is it better to use a
+   [*deploymment key*](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#deploy-keys)?
 
 ![Wikimedia: Git operations](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/500px-Git_operations.svg.png "Wikimedia: Git operations")
 
-## MVC-designmodel
+## MVC design model
+*Soon to be translated...*
+
 [**Designmønstre**](https://en.wikipedia.org/wiki/Software_design_pattern)
 er et område, der i nærværende projekt berøres som 
 [*Decorator* i form af `@` i klassedefinitioner](https://realpython.com/primer-on-python-decorators/)
@@ -51,7 +104,7 @@ og *Model-View-Controller*.
 Der er dog [stemmer](https://djangobook.com/mdj2-django-structure/),
 som taler for at Django's designmodel ikke rigtig lever op til MVC - også
 [denne blog](https://medium.com/shecodeafrica/understanding-the-mvc-pattern-in-django-edda05b9f43f)
-og Django-projektets egen
+og Django-projektets egen betegnelse
 [FAQ](https://docs.djangoproject.com/en/3.1/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names).
 - **Model**: beskriver 6 opgaver og 6 læringsmål på tværs af
   opgaverne for en given aflevering.

@@ -7,4 +7,6 @@ box_whiskers_demo/__pycache__
 boxplot/__pycache__
 boxplot/migrations/__pycache__
 .vscode
-tmp.txt.py
+tmp_txt.py
+boxplot/.ipynb_checkpoints/models-checkpoint.py
+boxplot/.ipynb_checkpoints/plot-checkpoint.ipynb

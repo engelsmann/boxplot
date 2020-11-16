@@ -12,22 +12,32 @@ locally and deleting the old GitBub repo, I succeeded in running
 version control with 
 [Git](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
 
-Three step overview
+Django's project and application
 ---
+Once created, a Django **project** can contain one or more **applicaitons**, apps.
+> I: [Create](https://docs.djangoproject.com/en/3.1/ref/django-admin/)
+> by issuing this command from the place in 
+> the file directory structure, where you want the (Git and)
+> Django project to reside:
+
+> `$ django-admin createproject box_whiskers_demo`
+
 Within the Django *project* `box_whiskers_demo`, a 
 [Django *application*](https://docs.djangoproject.com/en/3.1/intro/tutorial01/#creating-the-polls-app)
 with three steps (*View*s, and thus *Templates*) is to be developed.
 I'll give the demo app the name `boxplot`.
-> `box_whiskers_demo$ python manage.py startapp boxplot `
+> II: From the project root directory, `box_whiskers_demo`:
 
+> `$ python manage.py startapp boxplot `
+
+Three step overview
+---
 The `boxplot` demo app will exhibit three pages to the User:
 1. **Enter data** to the app:
    (Class, Students, detailed assessment data for one assignment).
-   File **upload button** interacts with the User
-   (and for convenience, download of valid data set is provided in a hyperlink).
-1. For the Class and Assignment given, 
-   **select a Student** whose assessment data to display.
-   A **dropdown** interacts with the User.
+1. For the `Klasse` and `Assignment` given (dropdowns), 
+   **select a Student**, `Elev`, whose assessment data to display graphically.
+   A set of **radio button**s interacts with the User.
 1. Show assessment data for the selected Student.
    Student data (dots)  will be highlighted on a
    backdrop of the whole Class' distribution of assessment data (boxplots).
@@ -39,9 +49,14 @@ and the like for personal branding of the developers.
 
 Step 1: Data entered into system
 ---
-- Show link to a valid CSV file, the user can download for demo purposes.
-- Show button "Grasp CSV file"
-- Read CSV file and store it in database
+- Not needed in the minimal first version: 
+  - ~~Link to a valid CSV file, the user can download for demo purposes~~.
+  - ~~Upload button for CSV file~~.
+  - ~~Safely read CSV file from 
+    [`HttpRequest.FILES` list](https://docs.djangoproject.com/en/3.1/ref/request-response/#django.http.HttpRequest.FILES)
+    and store it in database~~.
+
+  (Spared for refoactoring process).
 - Database in Django are [`models.py`](../../boxplot/models.py). 
   Database tables are instantiated from `models.Model`, and the columns in these tables,
   [fields](https://docs.djangoproject.com/en/3.1/ref/models/fields/#field-types),
@@ -90,7 +105,12 @@ Step 1: Data entered into system
         filtered for `Klasse.navn=='1test'`.
         The result of this will be the QuerySet
         `AssessmentScore.object.filter(klasse=Klasse.object.filter(Klasse.navn='1test').id)`.
-      - This QuerySet must then be prepared to produce a
+      - This QuerySet must then be imported to Django project.
+        That is, data from the CSV file for assessment scores of the assignment
+        are imported to Python and stored as `Elev` and `AssessmentScore`, respectively.
+        The importation is recorded in the file 
+        [data_import_assigment.py](../../data_import_assigment.py)
+      - The Django data, then must be prepared to produce a
         [matplotlib.boxplot](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.boxplot.html)
         plot, to use as background for the presentations of
         individual student performances, and thus a **storing mechanism**
@@ -107,12 +127,14 @@ Step 1: Data entered into system
         Django View
         (with back reference to the `index` to select another student).
 
+
      
 - Show button "Proceed to student selection" ([step 2](./step2.md))
 
-`$ python manage.py runserver` gives me a neat 
-Django [landing page](http:::127.0.0.1:8000), and from here, I continue tracking the 
-[Django tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/).
+`$ python manage.py runserver` gives me a neat Django
+[landing page](http:::127.0.0.1:8000 "Development server, local machine only"),
+and from here, I continue tracking the 
+[Django tutorial](https://docs.djangoproject.com/en/3.1/intro/tutorial02/ "Part 2").
 
 ### Documentation in `pydoc` - from DocStrings
 Python documentation should follow
@@ -162,6 +184,11 @@ Test suite
 But I also have to locate in which script files to put the following tests.
 In terms of certification, [pydoc](https://docs.python.org/3/library/pydoc.html) 
 shows up but also [doctest](https://docs.pytest.org/en/stable/doctest.html).
+However, now my
+[MS 98-381 exam](https://www.youracclaim.com/badges/d9115396-6c02-4a09-b35a-2d068321f36f "Just bragging :-)")
+on fundamentals of Python is passed, and the 
+[Django testing facilities](https://docs.djangoproject.com/en/3.1/intro/tutorial05/)
+seem more relevant.
 
 For functional tests (`Selenium` based), it was paramount to run the 
 test scripts **outside** Visual Studio Code. 
