@@ -85,7 +85,7 @@ Portaler:
 - [LAG](https://www.livogland.dk/lokale-aktionsgrupper)
 
 Research:
-- Mange fonde har lister på hjemmesider over 
+- Mange fonde har lister på hjemmesiden over 
   *tidligeres støttede* projekter, paradigmer.
 - [InnoBooster](https://innovationsfonden.dk/da/programmer/innobooster).
   På hjemmesiden ligger et webinar på godt en time om hvad de vil have.
