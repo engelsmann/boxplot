@@ -48,7 +48,10 @@ class Aflevering(models.Model):
     frist    = models.DateField('Afleveringsfrist', default=date(2020, 11, 28))
 
     def __str__(self):
-        """Præsentation af afleveringen
+        """Præsentation af afleveringen:
+        Titel;
+        Klasse tilknyttet og skoleår, afleveringen er givet;
+        Skole.
         """
         # pylint: disable=E1101
         # https://stackoverflow.com/a/57019528/888033
@@ -89,13 +92,16 @@ class AssesmentScore(models.Model):
         return [self.opg1, self.opg2, self.opg3, self.opg4, self.opg5, self.opg6, self.tankegang, self.fagsprog, self.cas, self.diagram, self.sammenhæng, self.konklusion]
     
     def __str__(self):
-        """Bedømmelse af en navngiven elev på en bestemt opgave
+        """Præsentation af bedømmelsen: En navngiven elev, en bestemt opgave,
+        6+6 scores (eller 6*6...)
         """
         # pylint: disable=E1101
         return f"Opgave '{self.aflevering.titel}' fra {self.elev.fulde_navn}: {self.scores}"
+    
+
 
 # Manual bootstrapping in Django iPython prompt (`python manage.py shell`), see:
 # https://docs.djangoproject.com/en/3.1/intro/tutorial02/#playing-with-the-api
 # You may want to hit the TAB after having typed
 # `from boxplot.models import Klasse, Elev, Aflevering, As`
-# (Last class name is automatically extended to `AssertmentScore`)
+# (Last class name `As`, then, is automatically extended to `AssertmentScore`)

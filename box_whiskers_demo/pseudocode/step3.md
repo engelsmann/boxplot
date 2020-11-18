@@ -6,3 +6,5 @@ Show selected student's profile in class context
 ![Paradigmatisk R plot](https://www.dropbox.com/s/5890fx1dcn5fml4/plot_covid_aflev.png?dl=1)
 
 <https://trello.com/c/UmVk65dQ>
+
+[MS Learn path migrate Webapps to Azure](https://docs.microsoft.com/da-dk/users/msignite2019/collections/nqzt3epm3q3p)
