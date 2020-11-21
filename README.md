@@ -181,6 +181,7 @@ der måske vil afklare min fremgangsmåde.
 Jeg overvejer pt to muligheder for at lægge et fungerende lokalt projekt
 op i skyen:
 - [Azure web app](https://docs.microsoft.com/da-dk/azure/app-service/tutorial-python-postgresql-app?tabs=bash%2Cclone)
+- [MS Learn path migrate Webapps to Azure](https://docs.microsoft.com/da-dk/users/msignite2019/collections/nqzt3epm3q3p)
   (som måske kræver PostgreSEQL), eller
 - [PythonAywhere.com](PythonAywhere.com)
   som er 

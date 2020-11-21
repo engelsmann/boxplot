@@ -27,6 +27,7 @@ from boxplot import views
 
 # 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('',                views.index,           name='index'),
+    path('elev_aflevering', views.elev_aflevering, name='elev_aflevering'),
     path('admin/', admin.site.urls),
 ] 

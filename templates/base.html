@@ -1,0 +1,28 @@
+{% load static %}<!DOCTYPE html lang="da">
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block page_title %}No tag <code>page_title</code>{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        {% block page_contents %}
+            Tag <code>page_contents</code> not specified in
+            <code>context</code> argument passed by View to inheriting template.
+        {%  endblock  %}
+        <table id="page_footer" width="100%">
+            <tr>
+                <td>
+                    <a href="/">Demo startside</a>
+                </td>
+                <td align="right">
+                    <a href="https://github.com/engelsmann/boxplot">GitHub repo</a>
+                </td>
+                <!-- td>
+                    <a href="/"></a>
+                </td  -->
+            </tr>
+        </table>
+    </body>
+</html>
