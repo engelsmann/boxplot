@@ -8,15 +8,17 @@
     </head>
     <body>
         {% block page_contents %}
-            Tag <code>page_contents</code> not specified in
-            <code>context</code> argument passed by View to inheriting template.
+            <p>
+                Tag <code>page_contents</code> not specified in
+                <code>context</code> argument passed by View to inheriting template.
+            </p> 
         {%  endblock  %}
         <table id="page_footer" width="100%">
             <tr>
-                <td>
+                <td id="link_home">
                     <a href="/">Demo startside</a>
                 </td>
-                <td align="right">
+                <td align="right" id="link_github">
                     <a href="https://github.com/engelsmann/boxplot">GitHub repo</a>
                 </td>
                 <!-- td>
