@@ -49,12 +49,61 @@ and generating separately-stored documentation files, **will** be a priority.
 During the weeks of producing this demo, the priority was focused on
 1. Learning the trade of:
    - Git for version control and GitHub for making the code accessible, 
-   - Python calls using script files from command line, 
-     iPython and Jupyter Notebook,
+   - Python programming 
+     1. using (importing) builtin libraries,
+     1. own functions and classes (OOP),
+     1. design patterns
+     1. document code, access formal documentation and other sources of info
+        regarding the functioning of Python code
+   - Python calls using various Python environments:
+     1. script files from command line, 
+     1. iPython and
+     1. Jupyter Notebook,
    - Visual Studio Code (Integrated Development Environment),
-   - Django (one Python web application framework amongst dozens),
-   - automated testing with probing code with `unittest` and Django test, 
-     web functionality using Selenium, and finally:
+     - Editor,
+     - Linting and integrated documentation,
+     - Debugging.
+   - Django (one Python *web application framework* amongst dozens),
+   - Automate testing with Selenium, Python's `unittest` and Django `test`:
+     1. [Strategy](https://docs.djangoproject.com/en/3.1/intro/tutorial05/#basic-testing-strategies)
+        for test design, not limited to listening to
+        [the goat](https://www.obeythetestinggoat.com/book/part1.harry.html)
+        > Tests [...] focus light on the part that has gone wrong - even if 
+        you hadn’t even realized it had gone wrong.
+
+        quoted from [Django's tutorial, 5](https://docs.djangoproject.com/en/3.1/intro/tutorial05/#tests-don-t-just-identify-problems-they-prevent-them).
+        - In 
+          [TestDriven Development](https://en.wikipedia.org/wiki/Test-driven_development), 
+          TDD, **tests are written before code** both as a means of expressing
+          specifications to the developer, and to fence the developer's attention
+          on the problem specified in order to save development resources.
+        - BDD, or 
+          [Behaviour-Driven Development](https://www.agilealliance.org/glossary/bdd/)
+          goes a step beyond by formulating **user stories**, 
+          and the goat book encourages that too.
+          Subsequently, the user stories are reformulated as tests, 
+          and the TDD process can start.
+     1. Setting up code with `unittest` and Django test.
+        Note the subtle psychology of 
+        ```
+        self.fail('Finish the test!')
+        ```
+        used in the 
+        [Goat-book, ch 2](https://www.obeythetestinggoat.com/book/chapter_02_unittest.html)
+        example employing both Selenium and `unittest`: 
+        For as long a test fails - and this one will until the `.fail()` is removed -
+        the developer is required to improve the code (or/and the test).
+     1. Testing the web app's **functionality** using Selenium's 
+        [WebDriver](https://www.selenium.dev/documentation/en/webdriver/).
+     1. Yet to come: 
+        [Django test](https://docs.djangoproject.com/en/3.1/topics/testing/tools/), 
+        specified in the *app* directory's `test.py` script.
+        The 
+        ```
+        $ python manage.py test
+        ```
+     
+     And, finally:
    - cloud computing using Azure (setting up account, 
      and installing a publicly accessible Web App).
 1. Leaving sufficient traces to be able to go down the same route later,
@@ -93,6 +142,15 @@ is also fine. Here is what I did:
    [*deploymment key*](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#deploy-keys)?
 
 ![Wikimedia: Git operations](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Git_operations.svg/500px-Git_operations.svg.png "Wikimedia: Git operations")
+
+### Version control, test and release
+As of October 2020, a *very* basic - *but executable* - version of a web app
+is running in my development environment.
+From this `main` version, the `test_suite_1` is forked and
+the intention is that the latter be merged back 
+into `main` upon satisfactory testing.
+When writing these words, towards the end of November 2020,
+I feel the branch coming very close to being merged back.
 
 ## MVC design model
 [**Design patterns**](https://en.wikipedia.org/wiki/Software_design_pattern)
@@ -216,7 +274,7 @@ This pseudocode is converted to Python code (see #3 in this list):
    Unit and functional tests in **development environment**. 
    Functional tests in **production environment**.
 
-# D   jango-projekt, Django-app
+# Django-projekt, Django-app
 *To be translated*:
 - Jeg har kaldt **projektet** `box-whiskers-demo`.
   Jeg har oprettet projektet med 

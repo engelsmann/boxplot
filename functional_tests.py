@@ -1,9 +1,11 @@
 """File: functional_tests_py
 https://www.obeythetestinggoat.com/book/chapter_01.html
 https://www.guru99.com/selenium-python.html
+https://docs.djangoproject.com/en/3.1/intro/tutorial05/#tests-don-t-just-identify-problems-they-prevent-them
 
-Remember! First set up dev server with command in 
-the directory of this file (Django project root):
+Remember! In order to run this suite of tests, you must 
+first set up dev server in the directory of this file 
+(Django project root) with command :
 $ python manage.py runserver
 
 Then run this script (as a script, still in root) with command:
@@ -12,112 +14,171 @@ $ python functional_tests.py
 Alternatively, run as a module, (exactly?) the same outcome:
 $ python -m functional_tests
 Note: "-m" but no ".py"
-""" 
+"""
+# Simulated web browser user
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-#from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-#cap = DesiredCapabilities().FIREFOX
-#cap["marionette"] = False
-
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from selenium                                       import webdriver
+from selenium.webdriver.common.by                   import By
+from selenium.webdriver.common.keys                 import Keys
+### https://selenium-python.readthedocs.io/api.html#selenium.webdriver.support.wait.WebDriverWait
+from selenium.webdriver.support.ui                  import WebDriverWait
+from selenium.webdriver.support.expected_conditions import presence_of_element_located
+# Test runner (deploying teh WebDriver)
 import unittest
-class SelectAndDisplayStudentTest(unittest.TestCase):  
+class SelectStudentTest(unittest.TestCase):
     """Goat book example
     https://www.obeythetestinggoat.com/book/chapter_02_unittest.html
+    ResourceWarning: https://github.com/deepmind/pysc2/issues/243
+    - The warning is a warning, no error. Keep calm and carry on.
+    - Appears in conjunction with a "timeout.py". Could it be that the web driver is too slow,
+    e.g. to close down window??
     """
-    def setUp(self):  
-        # browser = driver.Firefox(desired_capabilities=capabilities)
-        #browser = webdriver.Firefox(firefox_binary='/home/morten/firefox/firefox')
-        self.browser = webdriver.Firefox(firefox_binary='/home/morten/firefox/firefox')
-        #browser = webdriver.Firefox(firefox_binary='/home/morten/firefox/firefox-bin')
+
+    def setUp(self, student_id=7):
+        self.browser = webdriver.Firefox(
+            firefox_binary='/home/morten/firefox/firefox')
         self.browser.get('http://localhost:8000')
+        self.wait = WebDriverWait(self.browser, 20)
+        # Find INPUT field of type 'radio' in FORM.
+        # The field must have ID  == student_id.
+        # selenium.webdriver.common.by.By
+        # https://selenium-python.readthedocs.io/api.html#locate-elements-by
+        first_button = self.browser.find_element( 
+            By.CSS_SELECTOR,
+            f'input[type="radio"][id="elev{student_id}"]' 
+            )
+        first_button.click()
 
-
-    def tearDown(self):  
+    def tearDown(self):
         self.browser.quit()
-    
-    def test_landing_page_title(self):
+
+    def test_landing_page(self):
         """ Edith goes to landing page of boxplot app.
         """
         # She reads the title in browser tab
-        self.assertEqual('Demo boxplot', self.browser.title)  
+        self.assertEqual('Demo boxplot', self.browser.title)
 
-    def test_landing_page_has_link_home(self):  
+    def test_landing_page_has_home_links(self):
         """ Edith goes to landing page of boxplot app, finds link to same page.
         """
-#        self.browser.get('http://localhost:8000')
+        self.browser.get('http://localhost:8000')
 
         # in the footer, a link back to the index is displayed
         # Deprecated: assertDictContainsSubset() <- https://github.com/pylover/restfulpy/issues/186
         # https://selenium-python.readthedocs.io/locating-elements.html
-        # 
-        ### TypeError: argument of type 'FirefoxWebElement' is not iterable
+        #
+        # TypeError: argument of type 'FirefoxWebElement' is not iterable
         home_link = self.browser.find_element_by_link_text('Demo startside')
-        ### Type: https://www.selenium.dev/documentation/en/webdriver/web_element/
-        ### NB: landing_page_link.get_attribute('href') gives ABSOLUTE URL
-        ### 'http://localhost:8000/', NOT the RELATIVE string '/' entered in template HTML!
-        self.assertEqual( 
+        # Type: https://www.selenium.dev/documentation/en/webdriver/web_element/
+        # NB: landing_page_link.get_attribute('href') gives ABSOLUTE URL
+        # 'http://localhost:8000/', NOT the RELATIVE string '/' entered in template HTML!
+        self.assertEqual(
             home_link.get_attribute('href'),
             'http://localhost:8000/'
         )
-        #self.fail(f'Fails, because it is asked to. Reminds you: "Finish writing the test!"')  
-        
-    def test_landing_page_has_link_to_github(self):  
+
+    def landing_page_has_github_link(self):
         """ Edith goes to landing page of boxplot app, finds link to GitHub repo.
         """
         # in the footer, a link to Github/engelsmann/boxplot is displayed
+        # self.browser.get('http://localhost:8000')
         github_link = self.browser.find_element_by_link_text('GitHub repo')
 
-        self.assertEqual( 
+        self.assertEqual(
             github_link.get_attribute('href'),
             'https://github.com/engelsmann/boxplot'
         )
 
-    def test_student_name_to_left_of_radio_button(self, student_name = 'Helle Byskov', student_id=7):  
-        """To the left of the selected student name, the radio button for this person appears
-        """
-        student_radio_id = f'elev{student_id}' # Duplicate to test that label is name
-        student_label_list = self.browser.find_elements(By.TAG_NAME, 'label')
-        label_for_radios = [el.get_attribute("for") for el in student_label_list]
-#        student_radio = self.browser.find_element(By.ID, student_radio_id)
-        self.assertIn(
-            student_radio_id,
-            label_for_radios
-        )
-    def test_can_select_a_student(self, student_name = 'Helle Byskov', student_id=7):  
-        """You click on a student's name
+    def test_can_select_a_student(self, student_name='Helle Byskov', student_id=7):
+        """You click on a student's name -> The correct radio button is selected
+        https://www.guru99.com/accessing-forms-in-webdriver.html
         https://www.guru99.com/checkbox-and-radio-button-webdriver.html
         """
-        student_radio_id = f'elev{student_id}' # Duplicate to test that label is name
-#        student_radio = self.browser.find_element_by_id(student_radio_id)
         student_radio = self.browser.find_element_by_css_selector(
-            f"input[type='radio'][value='{student_radio_id}']"
-            )
+            f"input[type='radio'][id='elev{student_id}']"
+        )
         student_radio.click()
         self.assertTrue(
-            student_radio.is_selected(),
+            student_radio.is_selected()
         )
 
+    def test_title_after_submitted(self, student_name='Helle Byskov', student_id=7):
+        """Page title holds "score" and student name after selecte + submit
+        """
+        self.browser = webdriver.Firefox(
+            firefox_binary='/home/morten/firefox/firefox')
+        self.browser.get("http://127.1:8000")
+        student_radio_button = self.wait.until(
+            presence_of_element_located(
+                (By.CSS_SELECTOR,
+                 f'input[type="radio"][id="elev{student_id}"]')
+            )
+        )
+        student_radio_button.click()
+
+        self.assertTrue(
+            self.browser.title,
+            "Score, "+student_name
+        )
+
+
+    def test_h2_after_submitted(self, student_name='Helle Byskov', student_id=7, assignment_title="covid"):
+        # Page after submit shows H2 headline tellling the assignment title
+        self.browser.get("http://127.1:8000")
         
+        student_radio = self.browser.find_element_by_css_selector(
+            f"input[type='radio'][id='elev{student_id}']"
+        )
+        student_radio.click()
 
-        # The radio button is selected
+        form_submit = self.browser.find_element_by_css_selector(
+            "input[type='submit']"
+            )
+        form_submit.click()
 
-        # You press the SUBMIT button
+        page_title = self.browser.find_element_by_tag_name(
+            "h2"
+            ).get_attribute("innerHTML")
+        self.assertGreater(
+            page_title.find(assignment_title),
+            -1,
+            f"Assignment '{assignment_title}'' not found in H2 headline."
+        )
 
-        # You are send to the display page, "/"
+    def test_img_after_submitted(self, student_name='Helle Byskov', student_id=7):
+        # E: timeout
+        # A chart is displayed, that is: A HTML tag named "img" is present.
+        self.browser = webdriver.Firefox(
+            firefox_binary='/home/morten/firefox/firefox'
+            )
+        self.browser.get("http://127.1:8000")
+        student_radio = self.browser.find_element_by_css_selector(
+            f"input[type='radio'][id='elev{student_id}']"
+        )
+        student_radio.click()
 
-        # This page has the selected student's name in its title
+        form_submit = self.browser.find_element_by_css_selector(
+            "input[type='submit']"
+            )
+        form_submit.click()
 
-        # Page H2 headline tells the assignment title
+        # The image embedded as string
+        img_element = self.browser.find_element_by_tag_name("img")
+        src = img_element.get_attribute('src')
+        # The expected beginning of that string
+        needle = 'image/png;'
+        self.assertGreater(
+            src.find(needle),
+            -1, # Not found
+            "Image string should start with code including 'image/png'."
+        )
 
-        # A chart is displayed
+        # In the footer, a link back to the index is displayed
 
-        # in the footer, a link back to the index is displayed
+        # In the footer, a link to Github/engelsmann/boxplot is displayed
+        #self.fail(f'Fails, because it is asked to. Reminds you: "Finish writing the test!"')
 
-        # in the footer, a link to Github/engelsmann/boxplot is displayed
 
-
-if __name__ == '__main__':  
+if __name__ == '__main__':
     unittest.main()
