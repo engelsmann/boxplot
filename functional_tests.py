@@ -181,4 +181,5 @@ class SelectStudentTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    ### The unittest test runner, which will automatically find test classes and methods in the file and run them.
     unittest.main()

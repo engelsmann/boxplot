@@ -83,7 +83,7 @@ During the weeks of producing this demo, the priority was focused on
           and the goat book encourages that too.
           Subsequently, the user stories are reformulated as tests, 
           and the TDD process can start.
-     1. Setting up code with `unittest` and Django test.
+     1. Setting up code with `unittest` (and Django test).
         Note the subtle psychology of 
         ```
         self.fail('Finish the test!')
@@ -91,8 +91,9 @@ During the weeks of producing this demo, the priority was focused on
         used in the 
         [Goat-book, ch 2](https://www.obeythetestinggoat.com/book/chapter_02_unittest.html)
         example employing both Selenium and `unittest`: 
-        For as long a test fails - and this one will until the `.fail()` is removed -
-        the developer is required to improve the code (or/and the test).
+        For as long a test fails - and this one will until the `.fail()` is 
+        commented out/removed - the developer is required to improve the code 
+        (or/and the test).
      1. Testing the web app's **functionality** using Selenium's 
         [WebDriver](https://www.selenium.dev/documentation/en/webdriver/).
      1. Yet to come: 
