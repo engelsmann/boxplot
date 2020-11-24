@@ -103,8 +103,10 @@ During the weeks of producing this demo, the priority was focused on
         ```
         $ python manage.py test
         ```
+   - I took the risk of **deleting the obsolete** `git` **branch**,
+     `test_suite_1`.
      
-     And, finally:
+     And, next:
    - cloud computing using Azure (setting up account, 
      and installing a publicly accessible Web App).
 1. Leaving sufficient traces to be able to go down the same route later,
