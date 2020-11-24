@@ -15,18 +15,52 @@
         {%  endblock  %}
         <table id="page_footer" width="100%">
             <tr>
+                <td valign="bottom">
+                    <a href="/" id="link_home" title="Return to landing page">
+                        Demo startside
+                    </a>
+                </td>
+                <td align="center" valign="bottom">
+                    <a href="https://github.com/engelsmann/boxplot" id="link_github">
+                        <img 
+                            src="{% static '200px-Octicons-mark-github.png' %}"
+                            height="40" 
+                            width="40" 
+                            title="Read the demo roject's code on this GitHub repo"
+                        >
+                    </a>
+                </td>
+                <!-- 
                 <td>
-                    <a href="/" id="link_home">Demo startside</a>
-                </td>
-                <td align="right">
-                    <a href="https://github.com/engelsmann/boxplot" id="link_github">GitHub repo</a>
-                </td>
-                <!-- ONE THING THAT MAY BE ADDED TO FOOTER IS XHTML VALIDATION, https://validator.w3.org/#validate_by_uri
-                     If templates produce XML (XHTML), XPath can be used by Selenium webdriver.
-                     ONE MORE THING IS MY STACK EXCHANGE FLAIR https://stackexchange.com/users/476885/engelsmann?tab=flair
-                    td>
                     <a href="/"></a>
-                </td  -->
+                </td>
+                -->
+                <td align="center" valign="bottom">
+<!--                    StackExchange <i>flair</i><br /> -->
+                    <a href="https://stackexchange.com/users/476885/engelsmann">
+                        <img 
+                            src="https://stackexchange.com/users/flair/476885.png" 
+                            width="150" 
+                            height="40" 
+                            alt="Profile for engelsmann on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for engelsmann on Stack Exchange, a network of free, community-driven Q&amp;A sites"
+                        />
+                    </a>
+                </td>
+                <td align="right"
+                    >
+                    <!-- title="MS 98-381 certificate" -->
+                    <div 
+                        data-iframe-width="135" 
+                        data-iframe-height="135" 
+                        data-share-badge-id="d9115396-6c02-4a09-b35a-2d068321f36f" 
+                        data-share-badge-host="https://www.youracclaim.com">
+                    </div>
+                    <script 
+                        type="text/javascript" 
+                        async 
+                        src="//cdn.youracclaim.com/assets/utilities/embed.js">
+                    </script>
+                </td>
             </tr>
         </table>
     </body>
