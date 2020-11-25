@@ -1,18 +1,22 @@
-"""File: functional_tests_py
+"""File: functional_tests.py
 https://www.obeythetestinggoat.com/book/chapter_01.html
 https://www.guru99.com/selenium-python.html
 https://docs.djangoproject.com/en/3.1/intro/tutorial05/#tests-don-t-just-identify-problems-they-prevent-them
-
+Test order: https://stackoverflow.com/q/4095319/888033
 Remember! In order to run this suite of tests, you must 
 first set up dev server in the directory of this file 
 (Django project root) with command :
+
 $ python manage.py runserver
 
 Then run this script (as a script, still in root) with command:
+
 $ python functional_tests.py
 
 Alternatively, run as a module, (exactly?) the same outcome:
+
 $ python -m functional_tests
+
 Note: "-m" but no ".py"
 """
 # Simulated web browser user
@@ -24,7 +28,7 @@ from selenium.webdriver.common.keys                 import Keys
 ### https://selenium-python.readthedocs.io/api.html#selenium.webdriver.support.wait.WebDriverWait
 from selenium.webdriver.support.ui                  import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
-# Test runner (deploying teh WebDriver)
+# Test runner (deploying the WebDriver)
 import unittest
 class SelectStudentTest(unittest.TestCase):
     """Goat book example
@@ -102,9 +106,12 @@ class SelectStudentTest(unittest.TestCase):
         self.assertTrue(
             student_radio.is_selected()
         )
+        
+    # Selecting a student who has not received assesment is handled
+    # Selecting a student who has not received assesment (KeyError) results in meaningful message
 
-    def test_title_after_submitted(self, student_name='Helle Byskov', student_id=7):
-        """Page title holds "score" and student name after selecte + submit
+    def test_keyerror_on_student_not_assessed(self, student_name='Andersine Andersen', student_id=1):
+        """Page not reached if student selected did not receive assessment
         """
         self.browser = webdriver.Firefox(
             firefox_binary='/home/morten/firefox/firefox')
@@ -117,11 +124,22 @@ class SelectStudentTest(unittest.TestCase):
         )
         student_radio_button.click()
 
-        self.assertTrue(
-            self.browser.title,
-            "Score, "+student_name
-        )
+        form_submit = self.browser.find_element_by_css_selector(
+            "input[type='submit']"
+            )
+        form_submit.click()
+        self.assertGreater(
+            self.browser.title.find("KeyError"),
+            -1,
+            "Proceeding to chart page with "+student_name+" did not raise KeyError as expected."
+            )
+        # Tried, unsuccesful ...
+        # https://stackoverflow.com/a/6103983/888033
+        #with self.assertRaises(KeyError):
+        #    form_submit.click()
+        # AssertionError: KeyError not raised
 
+        
 
     def test_h2_after_submitted(self, student_name='Helle Byskov', student_id=7, assignment_title="covid"):
         # Page after submit shows H2 headline tellling the assignment title
