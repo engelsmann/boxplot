@@ -3,7 +3,15 @@
 {% block page_contents %}
     <h2>Afleveringsopgaven "{{  aflevering  }}"</h2>
     {% if chart %}
-        <img src="data: image/png; base64, {{chart|safe}}" />
+        <!-- 
+            Scale down image from 1000-by-500 
+            Could be done better in Python's MatplotLib code
+        -->
+        <img 
+            src="data: image/png; base64, {{chart|safe}}" 
+            width="800"
+            height="400"
+        />
     {% else %}
         No <code>chart</code> data from View <code>context</code> argumnet.
     {% endif %}

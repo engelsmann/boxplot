@@ -4189,3 +4189,494 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 1606171098231	Marionette	INFO	Stopped listening on port 43319
 JavaScript error: resource://gre/modules/NewTabUtils.jsm, line 686: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsINavHistoryService.asyncExecuteLegacyQuery]
 1606171129466	Marionette	INFO	Stopped listening on port 34131
+1606336165210	geckodriver	INFO	Listening on 127.0.0.1:54225
+1606336166211	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehGbPxq"
+Error: no DISPLAY environment variable specified
+1606336166376	geckodriver	INFO	Listening on 127.0.0.1:59429
+1606336167387	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehJI7Qn"
+Error: no DISPLAY environment variable specified
+1606336167501	geckodriver	INFO	Listening on 127.0.0.1:44723
+1606336168513	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiletbEXwP"
+Error: no DISPLAY environment variable specified
+1606336168626	geckodriver	INFO	Listening on 127.0.0.1:59491
+1606336169638	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEpa9VD"
+Error: no DISPLAY environment variable specified
+1606336169753	geckodriver	INFO	Listening on 127.0.0.1:59321
+1606336170764	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileY37Nfg"
+Error: no DISPLAY environment variable specified
+1606336170875	geckodriver	INFO	Listening on 127.0.0.1:60621
+1606336171886	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileIoZxPB"
+Error: no DISPLAY environment variable specified
+1606337343247	geckodriver	INFO	Listening on 127.0.0.1:59931
+1606337343261	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVsFDgL"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337348150	Marionette	INFO	Listening on port 35503
+1606337348228	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337352300	Marionette	INFO	Stopped listening on port 35503
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606337354283	geckodriver	INFO	Listening on 127.0.0.1:54363
+1606337354294	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileQ4z1gE"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337358563	Marionette	INFO	Listening on port 37471
+1606337358653	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337367410	Marionette	INFO	Stopped listening on port 37471
+1606337368982	geckodriver	INFO	Listening on 127.0.0.1:39967
+1606337368995	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYbYnAI"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337373343	Marionette	INFO	Listening on port 39339
+1606337373455	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337376993	geckodriver	INFO	Listening on 127.0.0.1:54087
+1606337377017	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileqd7ep0"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337382252	Marionette	INFO	Listening on port 42619
+1606337382385	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337387578	Marionette	INFO	Stopped listening on port 42619
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606337389110	geckodriver	INFO	Listening on 127.0.0.1:53899
+1606337390121	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuSp92H"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337394553	Marionette	INFO	Listening on port 38213
+1606337394688	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337398354	Marionette	INFO	Stopped listening on port 38213
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606337400304	geckodriver	INFO	Listening on 127.0.0.1:43507
+1606337401314	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYVsy7i"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337405382	Marionette	INFO	Listening on port 40615
+1606337405493	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337410586	Marionette	INFO	Stopped listening on port 40615
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606337412548	geckodriver	INFO	Listening on 127.0.0.1:48893
+1606337413555	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileyFXs91"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337417786	Marionette	INFO	Listening on port 39847
+1606337417932	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337421838	geckodriver	INFO	Listening on 127.0.0.1:46155
+1606337422846	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileMdo5da"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337428800	Marionette	INFO	Listening on port 40677
+1606337428913	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337433277	Marionette	INFO	Stopped listening on port 40677
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+console.warn: SearchService: "_init: abandoning init due to shutting down"
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting post to stat
+ExceptionHandler::GenerateDump cloned child ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+13456
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+1606337554862	geckodriver	INFO	Listening on 127.0.0.1:54851
+1606337554899	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileOHVH03"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337559087	Marionette	INFO	Listening on port 39495
+1606337559176	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337562863	Marionette	INFO	Stopped listening on port 39495
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 376))
+1606337564749	geckodriver	INFO	Listening on 127.0.0.1:44245
+1606337564760	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFCDG9F"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337569130	Marionette	INFO	Listening on port 39395
+1606337569237	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337575199	Marionette	INFO	Stopped listening on port 39395
+1606337576637	geckodriver	INFO	Listening on 127.0.0.1:38941
+1606337576648	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilejiJG7P"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337580925	Marionette	INFO	Listening on port 46869
+1606337581027	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337584550	geckodriver	INFO	Listening on 127.0.0.1:49051
+1606337585558	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5j5qzv"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337590421	Marionette	INFO	Listening on port 43637
+1606337590524	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337596927	Marionette	INFO	Stopped listening on port 43637
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606337598350	geckodriver	INFO	Listening on 127.0.0.1:52615
+1606337598360	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile364x8c"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337603212	Marionette	INFO	Listening on port 33241
+1606337603334	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337606822	geckodriver	INFO	Listening on 127.0.0.1:47567
+1606337606843	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileQ5bIsC"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337612144	Marionette	INFO	Listening on port 46813
+1606337612266	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337616527	Marionette	INFO	Stopped listening on port 46813
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+console.log: "RemoteSettingsWorker error: AbortError: IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort."
+console.log: "RemoteSettingsWorker error: AbortError: IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort."
+console.log: "RemoteSettingsWorker error: AbortError: IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort."
+console.error: "Could not load engine google@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.error: "Could not load engine amazon@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.error: "Could not load engine ddg@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.error: "Could not load engine bing@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.error: "Could not load engine wikipedia@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.warn: SearchService: "_init: abandoning init due to shutting down"
+console.log: "RemoteSettingsWorker error: AbortError: IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort."
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting post to stat
+ExceptionHandler::GenerateDump cloned child 15634
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+1606337683790	geckodriver	INFO	Listening on 127.0.0.1:34359
+1606337683799	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2ZKhSA"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337694186	Marionette	INFO	Listening on port 37251
+1606337694294	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337696148	Marionette	INFO	Stopped listening on port 37251
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606337698432	geckodriver	INFO	Listening on 127.0.0.1:45609
+1606337699439	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNTgRYJ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337706595	Marionette	INFO	Listening on port 45635
+1606337706722	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337710130	Marionette	INFO	Stopped listening on port 45635
+1606337801006	Marionette	INFO	Stopped listening on port 33241
+1606337803781	Marionette	INFO	Stopped listening on port 46869
+console.log: "RemoteSettingsWorker error: AbortError: IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort."
+console.error: services.settings: 
+  Message: TypeError: NetworkError when attempting to fetch resource.
+  Stack:
+    timedFetch/<@resource://services-common/kinto-http-client.js:549:22
+timedFetch@resource://services-common/kinto-http-client.js:527:20
+request@resource://services-common/kinto-http-client.js:613:41
+execute@resource://services-common/kinto-http-client.js:2400:44
+_fetchChangeset@resource://services-settings/RemoteSettingsClient.jsm:1038:22
+_importChanges@resource://services-settings/RemoteSettingsClient.jsm:890:20
+maybeSync@resource://services-settings/RemoteSettingsClient.jsm:595:35
+observe@resource://gre/modules/AsyncShutdown.jsm:554:16
+
+console.warn: services.settings: security-state/cert-revocations sync interrupted by shutdown
+console.warn: services.settings: security-state/onecrl sync interrupted by shutdown
+console.warn: services.settings: blocklists/addons-bloomfilters sync interrupted by shutdown
+1606337806322	Marionette	INFO	Stopped listening on port 39847
+1606337809206	Marionette	INFO	Stopped listening on port 39339
+1606337971149	geckodriver	INFO	Listening on 127.0.0.1:51981
+1606337971182	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVzlQXY"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337975696	Marionette	INFO	Listening on port 44609
+1606337975757	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337980286	Marionette	INFO	Stopped listening on port 44609
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606337981979	geckodriver	INFO	Listening on 127.0.0.1:53571
+1606337981992	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilemLI3db"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337986467	Marionette	INFO	Listening on port 37767
+1606337986552	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606337991906	Marionette	INFO	Stopped listening on port 37767
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606337993454	geckodriver	INFO	Listening on 127.0.0.1:40111
+1606337993466	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHRTyoB"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606337997973	Marionette	INFO	Listening on port 34529
+1606337998037	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338002611	geckodriver	INFO	Listening on 127.0.0.1:50833
+1606338002618	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5EbCAm"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338007215	Marionette	INFO	Listening on port 42255
+1606338007282	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338012748	Marionette	INFO	Stopped listening on port 42255
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338014385	geckodriver	INFO	Listening on 127.0.0.1:41447
+1606338014395	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileq2no3j"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338018743	Marionette	INFO	Listening on port 44907
+1606338018855	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338022157	geckodriver	INFO	Listening on 127.0.0.1:35275
+1606338023162	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile725dZZ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338028061	Marionette	INFO	Listening on port 41161
+1606338028135	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338055356	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:228:19
+TimedPromise@chrome://marionette/content/sync.js:213:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:418:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1606338055569	Marionette	INFO	Stopped listening on port 41161
+1606338057361	geckodriver	INFO	Listening on 127.0.0.1:59391
+1606338057375	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehMkRE9"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338061810	Marionette	INFO	Listening on port 38159
+1606338061966	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338065731	Marionette	INFO	Stopped listening on port 38159
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338067579	geckodriver	INFO	Listening on 127.0.0.1:46963
+1606338067593	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileWRxfGD"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338071950	Marionette	INFO	Listening on port 39797
+1606338072046	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338076215	Marionette	INFO	Stopped listening on port 39797
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338174984	Marionette	INFO	Stopped listening on port 44907
+1606338177919	Marionette	INFO	Stopped listening on port 34529
+1606338245718	geckodriver	INFO	Listening on 127.0.0.1:44841
+1606338246729	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilexnmDA7"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338251126	Marionette	INFO	Listening on port 44949
+1606338251233	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338255075	Marionette	INFO	Stopped listening on port 44949
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338256846	geckodriver	INFO	Listening on 127.0.0.1:60709
+1606338257854	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilecUco73"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338262657	Marionette	INFO	Listening on port 41719
+1606338262717	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338268530	Marionette	INFO	Stopped listening on port 41719
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338269843	geckodriver	INFO	Listening on 127.0.0.1:41635
+1606338269857	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileC2Sa5p"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338274174	Marionette	INFO	Listening on port 38523
+1606338274334	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338277764	geckodriver	INFO	Listening on 127.0.0.1:38651
+1606338278771	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiletlDMkY"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338283291	Marionette	INFO	Listening on port 33081
+1606338283431	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338288590	Marionette	INFO	Stopped listening on port 33081
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338290016	geckodriver	INFO	Listening on 127.0.0.1:34791
+1606338290026	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileSSeRVh"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338294475	Marionette	INFO	Listening on port 36639
+1606338294586	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338298311	geckodriver	INFO	Listening on 127.0.0.1:48619
+1606338298328	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileoxFvQu"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338303046	Marionette	INFO	Listening on port 39161
+1606338303159	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338307153	Marionette	INFO	Stopped listening on port 39161
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338309197	geckodriver	INFO	Listening on 127.0.0.1:55869
+1606338309206	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHg5sSn"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338313808	Marionette	INFO	Listening on port 36089
+1606338313871	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338317484	Marionette	INFO	Stopped listening on port 36089
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338319211	geckodriver	INFO	Listening on 127.0.0.1:49877
+1606338319225	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5pk0Ap"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338324299	Marionette	INFO	Listening on port 38543
+1606338324357	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338328745	Marionette	INFO	Stopped listening on port 38543
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338417099	Marionette	INFO	Stopped listening on port 38523
+1606338419779	Marionette	INFO	Stopped listening on port 36639
+1606338604846	geckodriver	INFO	Listening on 127.0.0.1:53099
+1606338604873	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGJHAeY"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338610898	Marionette	INFO	Listening on port 34265
+1606338610963	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338615022	Marionette	INFO	Stopped listening on port 34265
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338616868	geckodriver	INFO	Listening on 127.0.0.1:48567
+1606338616878	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileyUO9Fb"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338621162	Marionette	INFO	Listening on port 46393
+1606338621233	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338627506	Marionette	INFO	Stopped listening on port 46393
+1606338629192	geckodriver	INFO	Listening on 127.0.0.1:37203
+1606338630200	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2VEnMU"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338634820	Marionette	INFO	Listening on port 37691
+1606338634982	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338638543	geckodriver	INFO	Listening on 127.0.0.1:38723
+1606338639551	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile8lkOSx"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338644582	Marionette	INFO	Listening on port 34483
+1606338644812	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338650573	Marionette	INFO	Stopped listening on port 34483
+1606338651958	geckodriver	INFO	Listening on 127.0.0.1:41057
+1606338651968	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileF0CM5x"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338656942	Marionette	INFO	Listening on port 43975
+1606338657040	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338661851	geckodriver	INFO	Listening on 127.0.0.1:35011
+1606338661894	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHrAo7r"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338669615	Marionette	INFO	Listening on port 39377
+1606338669718	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338674708	Marionette	INFO	Stopped listening on port 39377
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338676900	geckodriver	INFO	Listening on 127.0.0.1:42481
+1606338677910	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTj0kr3"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338682244	Marionette	INFO	Listening on port 43563
+1606338682386	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338687166	Marionette	INFO	Stopped listening on port 43563
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338688895	geckodriver	INFO	Listening on 127.0.0.1:60421
+1606338688906	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile4P0zh9"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338693793	Marionette	INFO	Listening on port 45701
+1606338693865	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338699271	Marionette	INFO	Stopped listening on port 45701
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338812805	geckodriver	INFO	Listening on 127.0.0.1:47561
+1606338812822	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilepeR8uj"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338818030	Marionette	INFO	Listening on port 44221
+1606338818106	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338821899	Marionette	INFO	Stopped listening on port 44221
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338823708	geckodriver	INFO	Listening on 127.0.0.1:44735
+1606338823718	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilepo8uHN"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338828262	Marionette	INFO	Listening on port 45219
+1606338828386	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338834160	Marionette	INFO	Stopped listening on port 45219
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338835617	geckodriver	INFO	Listening on 127.0.0.1:57411
+1606338835631	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNyjcMQ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338840109	Marionette	INFO	Listening on port 32943
+1606338840193	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338845058	geckodriver	INFO	Listening on 127.0.0.1:59757
+1606338846066	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekJZ51v"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338851073	Marionette	INFO	Listening on port 45611
+1606338851146	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338857612	Marionette	INFO	Stopped listening on port 45611
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338859594	geckodriver	INFO	Listening on 127.0.0.1:34757
+1606338859605	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilenKCDOq"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338866334	Marionette	INFO	Listening on port 36685
+1606338866483	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338870604	geckodriver	INFO	Listening on 127.0.0.1:51203
+1606338870631	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRTnR1J"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338880983	Marionette	INFO	Listening on port 46643
+1606338881176	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338888895	Marionette	INFO	Stopped listening on port 46643
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
+console.warn: services.settings: main/cfr sync interrupted by shutdown
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.log: "RemoteSettingsWorker error: Error: Can't import when we've started shutting down."
+console.error: "Could not load engine google@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.error: "Could not load engine amazon@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.error: "Could not load engine ddg@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.error: "Could not load engine bing@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.error: "Could not load engine wikipedia@search.mozilla.org: [Exception... \"AddonManager is not initialized\"  nsresult: \"0xc1f30001 (NS_ERROR_NOT_INITIALIZED)\"  location: \"JS frame :: resource://gre/modules/AddonManager.jsm :: installBuiltinAddon :: line 2550\"  data: no]"
+console.warn: SearchService: "_init: abandoning init due to shutting down"
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+JavaScript error: , line 0: uncaught exception: 2147500036
+console.error: PushService: 
+  clearOriginData: Error clearing origin data:
+  UnknownError
+console.error: PushService: 
+  stateChangeProcessEnqueue: Error transitioning state
+  UnknownError
+1606338892054	Marionette	INFO	Stopped listening on port 43975
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting post to stat
+ExceptionHandler::GenerateDump cloned child 27164
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+1606338956514	geckodriver	INFO	Listening on 127.0.0.1:46909
+1606338956526	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileP9KxFf"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338961641	Marionette	INFO	Listening on port 42343
+1606338961707	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338965345	Marionette	INFO	Stopped listening on port 42343
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1606338967178	geckodriver	INFO	Listening on 127.0.0.1:34713
+1606338967190	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile56O4T9"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606338971386	Marionette	INFO	Listening on port 40553
+1606338971478	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606338975591	Marionette	INFO	Stopped listening on port 40553
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606338985701	Marionette	INFO	Stopped listening on port 32943
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1606338989500	Marionette	INFO	Stopped listening on port 36685
+1606338991728	Marionette	INFO	Stopped listening on port 37691
+1606380312249	geckodriver	INFO	Listening on 127.0.0.1:56499
+1606380313247	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilediBO6r"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606380320719	Marionette	INFO	Listening on port 38493
+1606380320835	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606380325942	Marionette	INFO	Stopped listening on port 38493
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606380327699	geckodriver	INFO	Listening on 127.0.0.1:49475
+1606380327708	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileAM6arj"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606380332671	Marionette	INFO	Listening on port 41811
+1606380332763	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606380338423	Marionette	INFO	Stopped listening on port 41811
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606380339921	geckodriver	INFO	Listening on 127.0.0.1:41965
+1606380339929	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuJICZ4"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606380344724	Marionette	INFO	Listening on port 36297
+1606380344812	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606380348351	geckodriver	INFO	Listening on 127.0.0.1:45441
+1606380348386	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileE7egNc"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606380352915	Marionette	INFO	Listening on port 38483
+1606380353066	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606380358690	Marionette	INFO	Stopped listening on port 38483
+1606380360262	geckodriver	INFO	Listening on 127.0.0.1:44201
+1606380360308	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilecht6R0"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606380365491	Marionette	INFO	Listening on port 42613
+1606380365600	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606380369907	geckodriver	INFO	Listening on 127.0.0.1:39947
+1606380370915	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileogNTTM"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606380375675	Marionette	INFO	Listening on port 33957
+1606380375843	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606380381765	Marionette	INFO	Stopped listening on port 33957
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606380384266	geckodriver	INFO	Listening on 127.0.0.1:47403
+1606380384275	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEtOsUk"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606380388886	Marionette	INFO	Listening on port 43313
+1606380388961	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606380392426	Marionette	INFO	Stopped listening on port 43313
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606380394257	geckodriver	INFO	Listening on 127.0.0.1:52023
+1606380394264	mozrunner::runner	INFO	Running command: "/home/morten/firefox/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileJRynbu"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1606380398635	Marionette	INFO	Listening on port 38637
+1606380398721	Marionette	WARN	TLS certificate errors will be ignored for this session
+1606380403162	Marionette	INFO	Stopped listening on port 38637
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1606380713276	Marionette	INFO	Stopped listening on port 42613
+1606380719295	Marionette	INFO	Stopped listening on port 36297

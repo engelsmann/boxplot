@@ -45,23 +45,30 @@
         <ul class="todo" title="To Do List" >
            <!-- class="done" eller tom. -->
            <li class="done">Statiske filer (CSS, favicon) har et sted at bo.</li>
-           <li class="done">indbyggede skabelon-<code>tag</code>s opfattes som ønsket.</li>
-           <li class="done">Liste med registrerede afleveringsopgaver registreres ikke som skabelon-variabel</li> 
+           <li class="done">
+               Liste med registrerede afleveringsopgaver registreres som skabelon-variabel.
+           </li> 
            <li class="done">
                Data <i>bootstrap</i>pes ind i appen: 
                Liste med <code>Elever</code> fra <code>Klasse</code> på test-<code>Skole</code>.
                Bedømt demo-<code>Aflevering</code> og
                tilhørende <code>AssessmentScore</code> for hver elev i klassen.
+               Efter manuel <i>bootstrapping</i> af udviklingsversion er 
+               <a href="https://github.com/engelsmann/boxplot/blob/master/db_backup.py">
+                script til SQL-dump
+               </a>
+               oprettet, og distribueres på GitHub, så en hurtigere <i>bootstrapping</i>
+               kan finde sted ved test i produktionsmiljøer.
            </li>
-           <li class="done">Interaktivitet
+           <li class="">Interaktivitet
               <ol>
-                <li class="">Jeg starter med at følge 
+                <li class="done">Jeg starter med at følge 
                     <a href="https://docs.djangoproject.com/en/3.1/intro/tutorial04/"
                        title="Django documentation site, tutorial 4">Tut 4</a>.
                     Den fjerde del af vejledningen indfører <i>blanketter</i>,
                     eller <code>form</code>-elementer på siden.
                 </li>
-                <li class="">
+                <li class="done">
                     Dokumentation af
                     <a href="https://docs.djangoproject.com/en/3.1/topics/forms/#building-a-form-in-django"
                        title="Official Django documentation on the 'Working with Forms'">
@@ -83,10 +90,18 @@
                     som ligeledes udpeges overfor <code>render()</code>.
                 </li>
                 <li class="done">
-                    Info som ikke har med funktionaliteten, men mere er til læringsbrug,
+                    Dropdown-felt / radioknap-liste vises og netop 1 elev kan vælges fra listen.
+                </li>
+                <li class="done">
+                    Valgt elev vises som <i>overlay</i> i diagram.
+                </li>
+                <li class="">
+                    Info på denne side, som ikke har med funktionalitet at gøre,
+                    men mere er til læringsbrug,
                     <b>skjules</b> når en elev er valgt og FORM indsendt 
                     (<code>POST</code>ed).
                 </li>
+                <li class="">Valgt elev uden bedømmelse af aflevering håndteres</li>
                 <li class="">
                     For at fungere kræver en dropdown at være del af en HTML FORM.
                     Men hvordan skal jeg bruge Django Forms'
@@ -94,19 +109,22 @@
                     så det bliver element i den <code>Form</code>, 
                     jeg har oprettet i <code>index.html</code> skabelonen?
                 </li>
-                <li class="">Dropdown felt vises og 1 elev kan vælges fra listen.</li>
-                <li class="">Valgt elev vises som <i>overlay</i>.</li>
-                <li class=""></li>
               </ol>    
            </li>
-           <li class="">Huskelistens punkter enten afkrydsningsfirkant eller flueben
-               (Unicode 0x25a1: □, 0x2714: ✔).</li>
+           <li class="done">Indbyggede skabelon-<code>tag</code>s opfattes som ønsket.</li>
+           <li class="done">
+               Nedarvning af skabelon fra <code>base.html</code> til
+               <code>index.html</code> og  <code>elev_aflevering.html</code>.
+            </li>
            <li class="done">Test automatiseres i overensstemmelse med 
                <a href="https://www.obeythetestinggoat.com/book/part1.harry.html">Obey the Testing Goat</a>-bogen.
                (Funktionelle tests med <b>Selenium</b> browserautomatisering
                og enhedstests med Pythons <code>unittest</code> modul).
-           </li>
-           <li class="done">
+            </li>
+            <li class="">
+                Django (unit) tests.
+            </li>
+            <li class="done">
                For at kunne samle GIT gren <code>test_suite_1</code> med
                <code>main</code> på GitHub sørger jeg for at følge
                <a href="https://docs.djangoproject.com/en/3.1/intro/tutorial05/"
@@ -118,11 +136,18 @@
                     pull request
                 </a>
                 kan behandles (grenene samles, <i>merge</i>s) på 
-                <a href="https://docs.github.com/articles/using-pull-requests">GitHub</a>.
+                <a href="https://docu.github.com/articles/using-pull-requests">GitHub</a>.
+                Det viser sig dog, at en <code>git merge</code>, hvor der ikke er behov
+                for manuel behandling, kan klares fra den lokale maskine.
+                Kun ved behov for manuel tilpasning af kode, 
+                giver <i>GitHub pull request</i> mening.
            </li>
-           <li class="done">Nedarvning af skabelon.</li>
-           <li class="">(Link til fil download) - udelades i minimal  version.</li>
-           <li class="">(Knap til upload af fil) - udelades i minimal version.</li>
+           <li class="">
+               (Huskelistens punkter enten afkrydsningsfirkant eller flueben 
+               - Unicode 0x25a1: □, 0x2714: ✔).
+            </li>
+            <li class="">(Knap til upload af fil) - udelades i minimal version.</li>
+            <li class="">(Link til fil download) - udelades i minimal  version.</li>
         </ul>
         {% endif %}
 {% endblock %}
