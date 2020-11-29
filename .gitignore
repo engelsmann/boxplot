@@ -13,11 +13,6 @@ boxplot/__pycache__
 boxplot/migrations/__pycache__
 boxplot/boxplot-selenium*
 
-Dataflow_bedom.drawio
-Dataflow_bedom.png
-.ipynb_checkpoints/Azure-checkpoint.ipynb
-.ipynb_checkpoints/functional_tests-checkpoint.py
-backup.db
 .dockerignore
 Dockerfile
 requirements.txt
