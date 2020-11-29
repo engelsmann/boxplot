@@ -1,7 +1,6 @@
 .vscode
 *.p
 *.log
-db.sqlite3
 manage.py
 sketch1603900755770.png
 tmp_txt.py
