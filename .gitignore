@@ -13,4 +13,3 @@ boxplot/boxplot-selenium*
 
 .dockerignore
 Dockerfile
-requirements.txt
