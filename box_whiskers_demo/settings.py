@@ -26,7 +26,7 @@ SECRET_KEY = '$gv-1#!!-thqcxsvr&ja0pn)-9c2bx9ij&1!a8_eh8eu8i(c1='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'engelsmann.eu.pythonanywhere.com', 'testserver']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'box-whiskers-demo.azurewebsites.net', 'engelsmann.eu.pythonanywhere.com', 'testserver']
 
 
 # Application definition
