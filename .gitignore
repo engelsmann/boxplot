@@ -1,7 +1,6 @@
 .vscode
 *.p
 *.log
-manage.py
 sketch1603900755770.png
 tmp_txt.py
 __pycache__
