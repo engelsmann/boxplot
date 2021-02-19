@@ -14,3 +14,4 @@ boxplot/boxplot-selenium*
 .dockerignore
 Dockerfile
 config.json
+.github_token
