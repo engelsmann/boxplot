@@ -30,6 +30,4 @@ urlpatterns = [
     path('',                  views.index,           name='index'          ),
     path('elev_aflevering',   views.elev_aflevering, name='elev_aflevering'),
     path('admin/',            admin.site.urls     ),
-    # Morten's intuitive forsøg på at få STATIC files på Azure
-    path(settings.STATIC_URL, settings.STATIC_ROOT),
-] 
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
