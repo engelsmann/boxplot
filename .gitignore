@@ -13,3 +13,4 @@ boxplot/boxplot-selenium*
 
 .dockerignore
 Dockerfile
+config.json
